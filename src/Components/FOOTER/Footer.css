@@ -1,0 +1,247 @@
+/* ----------Footer.css-------------- */
+.footer {
+  background-image: url(../../Assets/images/FooterImg/footerBg.jpg);
+  color: #fff;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+.footer-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1 1 18%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-column:last-child {
+  margin-right: 0;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.footer-column p {
+  margin: 5px 0;
+}
+
+.footer-column ul,
+.footer-column p {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.footer-column ul li {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.app-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.app-links img {
+  width: 120px;
+  margin-top: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.tags li {
+  margin-right: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.foothead {
+  font-size: 25px !important;
+  font-weight: 700;
+}
+
+.Privacy {
+  color: orange;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+.footlogo {
+  cursor: pointer;
+}
+
+/* Media Queries */
+
+/* Small devices (up to 767px) */
+@media (max-width: 767px) {
+  .SocailIcons {
+    margin: 0 auto;
+  }
+  .CopyRightFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .iconfoot {
+    font-size: medium !important;
+  }
+
+  .fs-4 {
+    font-size: 1.4em !important;
+    text-align: center;
+  }
+
+  .linkedin,
+  .insta,
+  .facebook,
+  .twitter {
+    font-size: large !important;
+    padding-left: 5px;
+    width: 14px !important;
+    &:hover {
+      color: rgb(255, 153, 255) !important;
+    }
+  }
+
+  .textcertified {
+    font-size: 12px !important;
+  }
+  .footlogo {
+    width: 100% !important;
+    max-width: 150px !important;
+  }
+
+  .Privacy {
+    font-size: 12px !important ;
+  }
+}
+
+/* Medium devices (768px to 1007px) */
+@media (min-width: 768px) and (max-width: 1007px) {
+  .iconfoot {
+    font-size: medium !important;
+  }
+  .fs-4 {
+    font-size: large !important;
+  }
+  .linkedin,
+  .insta,
+  .facebook,
+  .twitter {
+    padding-left: 5px;
+    width: 14px !important;
+  }
+
+  .textcertified {
+    font-size: 12px !important;
+  }
+  .footlogo {
+    width: 100% !important;
+    max-width: 80px !important;
+  }
+
+  .Privacy {
+    font-size: 12px !important ;
+  }
+}
+
+/* Large devices (1008px and up) */
+@media (min-width: 1008px) {
+}
+
+.footer-column ul li {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.app-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.app-links img {
+  width: 120px;
+  margin-top: 10px;
+}
+a {
+  text-decoration: none !important;
+  &:hover {
+    color: rgb(151 70 147) !important;
+  }
+}
+
+.navbut {
+  background-color: purple;
+  color: #fff;
+  font-weight: 500;
+  margin-top: 20px;
+  border-radius: 0;
+  border: 1px solid #d0cece;
+
+  &:hover {
+    border: 1px solid purple;
+    background: #fff;
+    color: purple !important;
+    transition: 0.3s;
+  }
+}
+
+.footlogo {
+  max-width: 140px;
+  margin-right: 10px;
+}
+
+.iconfoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.iconfoot span {
+  margin-left: 10px !important;
+  font-size: 0.9em !important;
+}
+
+.conticon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: purple !important;
+}
+
+.conticon a {
+  margin-right: 10px;
+  color: #333;
+  color: #fff !important;
+  font-size: 25px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: rotate(360deg);
+    /* transform: translateY(40px); */
+  }
+}
+.certified {
+  font-size: 1em;
+}
+
+.bsicon {
+  &:hover {
+    color: #e271e2 !important;
+  }
+}

@@ -1,0 +1,234 @@
+
+.sideimg {
+  width: 451px;
+  height: 567px;
+  border-radius: 50px;
+}
+
+.msginput {
+  height: 100px;
+  margin-bottom: 10px;
+  resize: none;
+}
+.msginput:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.input:focus {
+  border: 1px solid plum !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+
+.MainDetail {
+  position: relative;
+  background: url(../../Assets/images/ContactImg/racket.png) !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  width: 100% !important;
+}
+
+.MainDetail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 255, 0.322);
+  z-index: 1;
+}
+.newbg {
+  position: relative;
+  z-index: 20;
+  margin-bottom: 30px !important;
+}
+
+/* link work */
+.navlinks {
+  padding: 12px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 5px;
+}
+.a-nav {
+  color: #fff !important;
+  font-size: larger;
+  font-weight: 600;
+  &:hover {
+    color: aliceblue !important;
+    text-decoration: underline !important;
+  }
+}
+.iconNav {
+  float: inline-end;
+  color: #fff;
+  &:hover {
+    color: aliceblue;
+  }
+}
+/* .business details */
+.business-queries,
+.contact-info {
+  background-color: #fff;
+  height: 300px !important;
+  border-radius: 20px !important;
+  padding: 20px;
+}
+.color {
+  color: #000;
+  font-weight: 600;
+}
+.color2 {
+  color: #000;
+  font-weight: 600;
+  font-size: small;
+  &:hover {
+    color: palevioletred;
+  }
+}
+.contact-person {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contact-item {
+  height: 60px !important;
+  width: 186px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-around;
+}
+.iconss {
+  line-height: 100px !important;
+  width: 100% !important;
+  max-width: 80px !important;
+  min-height: 30px !important;
+  &:hover {
+    color: palevioletred !important;
+  }
+}
+.ContactBtn {
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  background-color: purple !important;
+  border-color: purple !important;
+  color: #ffffff !important;
+  transition: 0.5s all ease-in-out !important;
+
+
+  &:hover {
+    background-color: whitesmoke !important;
+    color: purple !important;
+  }
+}
+
+
+/* <-------------------contactMap work-----------------> */
+
+
+
+.conAccordion .accordion-button:focus,
+.conAccordion .accordion-button:active {
+  box-shadow: none !important;
+  border: 2px solid palevioletred !important;
+  outline: none !important;
+}
+.conAccordion .accordion-button:not(.collapsed) {
+  box-shadow: none !important;
+  border: 1px solid palevioletred !important;
+  outline: none !important;
+}
+.accordion-button:not(.collapsed) {
+  background-color: plum !important;
+}
+
+@media (min-width: 777px) and (max-width: 990px) {
+  .MainDetail {
+    position: relative;
+    background: url(../../Assets/images/ContactImg/racket.png) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    height: 850px !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+  .sideimg {
+    width: 100% !important;
+    height: 490px !important;
+  }
+  .formImg {
+    width: 400px;
+    margin-left: 20px !important;
+  }
+}
+@media (max-width: 776px) {
+  .sideimg {
+    display: none;
+  }
+
+  Label,.fill {
+    color: #fff  !important;
+    z-index: 1;
+
+    position: relative;
+
+  }
+
+  .fluidcon {
+    position: relative;
+    width: 100%;
+    /* height:  auto !important; */
+    background: url(../../Assets/images/ContactImg/contact-1.png) no-repeat
+      center center;
+    background-size: cover;
+  }
+
+  .fluidcon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 255, 0.322);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .fromContainer{
+    position: relative;
+    z-index: 999;
+  }
+
+  .handleSubmit {
+    display: block !important;
+    margin: auto !important;
+  }
+  .displayContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* rework */
+  .business-queries {
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+  .contact-info {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+ 
+}
+
+.accordion-button {
+  width: 100% !important;
+  float: none !important;
+  color: black !important;
+  font-weight: normal;
+  text-align: center;
+}

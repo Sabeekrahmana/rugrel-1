@@ -1,0 +1,16 @@
+.powerImg {
+  background: url(../../../Assets/images/AllproductsImages/TitleImg/areas-bg.png);
+  width: 100% !important;
+  height: 280px;
+  background-repeat: no-repeat;
+}
+.PRmaintext {
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgb(234 238 255)
+}
+
+.PRmaintext h3{
+  font-weight: 700;
+
+}

@@ -1,0 +1,107 @@
+.proHead {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.products {
+  display: flex !important;
+  justify-content: space-evenly !important;
+  flex-wrap: wrap;
+  align-items: center !important;
+}
+
+.card-img-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.card-img {
+  padding: 30px !important;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-img-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border: 1px solid #ffffff;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  
+  &:hover {
+    color: #000;
+  }
+}
+
+.imgTitle {
+  color: #fff;
+  width: 100%;
+  top: 166px;
+  opacity: 0.8;
+  padding: 8px;
+  position: absolute;
+  font-size: 14px !important;
+  text-align: center !important;
+  font-weight: bold !important;
+  background-color: #374553 !important;
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
+/* ---------MOIZ CODE -------- */
+.hover-contaier-outer {
+  width: 250px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border: none !important;
+  box-shadow: rgba(240, 46, 170, 0.1) 0px 0px 5px 0px,
+    rgba(240, 46, 170, 0.1) 0px 0px 1px 0px;
+}
+
+.hover-over-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -100%;
+  background-color: transparent;
+  transition: all 0.5s ease-in-out;
+  border: none;
+}
+
+.hover-contaier-outer:hover .hover-over-container {
+  bottom: 33px;
+  background-color: #ecc9fb;
+  opacity: 0.6;
+}
+
+.card-main-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: none !important;
+}
+
+/* @keyframes moveUp {
+  0% {
+    bottom: -150px;
+    background-color: transparent;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    background-color: #e9b4fe;
+    opacity: 1;
+  }
+}
+
+.hover-contaier-outer:hover .hover-over-container {
+  animation: moveDown 0.7s ease-in-out forwards;
+} */
