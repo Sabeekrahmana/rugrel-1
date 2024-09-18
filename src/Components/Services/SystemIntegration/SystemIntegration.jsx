@@ -11,6 +11,8 @@ import ServiceBanner from '../ServiceBanners/ServiceBanner';
 import ban4 from "../../../Assets/images/ServicesImg/manufacture.jpg"; 
 import HeadNavBar from '../../HEADER/HeadNavBar';
 import Footer from '../../FOOTER/Footer';
+import ser1 from "../../../Assets/images/ServicesImg/ser5.jpg";
+
 
 
 const SystemIntegration = () => {
@@ -53,6 +55,13 @@ const SystemIntegration = () => {
     }
   ];
 
+  const relatedProductsData = [
+    { imgSrc: ser1, title: "Product 1" },
+    { imgSrc: ser1, title: "Product 2" },
+    { imgSrc: ser1, title: "Product 3" },
+  ];
+
+
   return (
     <>
       <HeadNavBar />
@@ -63,10 +72,9 @@ const SystemIntegration = () => {
       
       {/* Heading and Paragraph */}
       <Container className="my-5">
-        <h1 className="fw-bold">System Integration</h1>
+        <h1 className="fw-bold">5.1 Sub-System & System Integration</h1>
         <p className="fs-5" style={{ textAlign: "justify" }}>
-          Detailed description of the system integration services. You can include information about your approach, expertise, and the value this service brings to clients.
-        </p>
+        Our system integration services involve the seamless integration of mechanical and electronic subsystems into fully operational defense systems. We provide end-to-end integration, including hardware, software, and firmware, ensuring that all components work together efficiently. We also offer testing and validation services to ensure the systems meet all necessary defense and aerospace standards.        </p>
       </Container>
 
       {/* Banner */}
@@ -98,13 +106,22 @@ const SystemIntegration = () => {
               </Button>
             </div>
 
-            {/* Additional Content */}
+            {/* Display Related Products directly after clicking Read More */}
             {activeSection === index && (
               <div className="my-4">
-                <h4>{section.title} - More Details</h4>
-                <p>
-                  Additional details about {section.title} can be placed here for further explanation and insights.
-                </p>
+                <h4>Related Products</h4>
+                <Row>
+                  {relatedProductsData.map((product, idx) => (
+                    <Col md={4} key={idx} className="text-center my-3">
+                      <img
+                        src={product.imgSrc}
+                        alt={product.title}
+                        className="img-fluid mb-2"
+                      />
+                      <h5>{product.title}</h5>
+                    </Col>
+                  ))}
+                </Row>
               </div>
             )}
           </div>
