@@ -8,12 +8,10 @@ import bannerImg from "../../../Assets/images/ServicesImg/serviceBanner.jpg";
 import HeadNavBar from "../../HEADER/HeadNavBar";
 import Footer from "../../FOOTER/Footer";
 
-
 const DesignServices = () => {
   const [activeSection, setActiveSection] = useState(null);
 
-  useEffect(() => window.scroll(0, 0),[])
-
+  useEffect(() => window.scroll(0, 0), []);
 
   const handleButtonClick = (index) => {
     setActiveSection(activeSection === index ? null : index);
@@ -22,23 +20,23 @@ const DesignServices = () => {
   const sectionsData = [
     {
       id: "mechanical",
-      heading: "MECHANICAL Services",
+      heading: "1.1 Mechanical Design Services",
       content:
-        "The networked battlespace is rapidly expanding and evolving and thus creating an increasing need to rapidly field systems that are smarter and faster while at the same time smaller, lighter and more cost-effective. Rugged computing solutions are vital to the military, especially as onboard computing becomes common and crucial on vehicles, field sensors, ISR missions and weapons systems. ZMicro’s rugged systems are built to withstand the combat environment using proven COTS components that are ruggedized to stand up to extreme temperatures, shock, vibration, and electromagnetic interference.",
+        "Our mechanical design services are at the heart of every robust defense and aerospace system we build. Rug-Rel offers comprehensive design solutions that cover everything from conceptual modeling to the final product, ensuring that every system we create is optimized for functionality, durability, and performance in extreme conditions.",
       imgSrc: ser1,
     },
     {
       id: "fpga",
-      heading: "FPGA",
+      heading: "1.2 FPGA Design Services",
       content:
-        "We provide innovative solutions that are built to last. Our team ensures that each design and implementation is tailored to your unique requirements, ensuring reliability and performance in demanding environments. Our commitment to quality and service has made us the trusted choice for government and military customers around the world.",
+        "Our FPGA design services cater to the unique needs of defense, aerospace, and industrial sectors. FPGA (Field-Programmable Gate Array) technology is critical for applications that require real-time processing, high data throughput, and flexible reconfiguration capabilities. Rug-Rel’s FPGA designs are built to handle advanced tasks such as signal processing, data encryption, and embedded computing, offering scalable solutions for defense-grade systems.We specialize in edge computing, AI/ML integration, and signal processing, ensuring that your systems remain adaptable and future-proof.",
       imgSrc: ser1,
     },
     {
       id: "pcb",
-      heading: "PCB",
+      heading: "1.3 PCB Design Services",
       content:
-        "We provide innovative solutions that are built to last. Our team ensures that each design and implementation is tailored to your unique requirements, ensuring reliability and performance in demanding environments. Our commitment to quality and service has made us the trusted choice for government and military customers around the world.",
+        " Our PCB design services provide optimized layouts for high-speed, multi-layer PCB systems tailored for defense, aerospace, and industrial applications. We ensure compliance with industry standards for signal integrity, EMI/EMC protection, and manufacturability. We design multi-layer PCBs that support complex circuitry, ensuring reliability under harsh conditions. Rug-Rel’s PCB designs are engineered for high-frequency, RF, and mixed-signal applications, delivering seamless integration in critical systems.",
       imgSrc: ser1,
     },
   ];
@@ -52,18 +50,18 @@ const DesignServices = () => {
   return (
     <>
       <HeadNavBar />
-      <ServiceBanner 
-        imageUrl={bannerImg} 
-        heading="DESIGN SERVICES"
-      />
+      <ServiceBanner imageUrl={bannerImg} heading="DESIGN SERVICES" />
       <Container style={{ padding: "30px 60px" }} className="my-4">
-        <h2 className="fw-bold my-4">Design Services</h2>
+        <h2 className="my-4">
+          <b>Our Services :-</b> Rug-Rel Components & Systems Pvt. Ltd.
+        </h2>
         <p className="fs-5">
-          Technology that was initially developed for military and aerospace can
-          often be repurposed in new applications in medicine, transportation,
-          or even consumer goods. There are numerous benefits in doing this
-          since the technology is highly reliable, readily available and easily
-          adaptable.
+          At Rug-Rel Components & Systems Pvt. Ltd., we specialize in providing
+          high-quality, defense-grade electronic systems and solutions. Our
+          services are meticulously designed to meet the rigorous demands of
+          defense, aerospace, industrial, and other high-reliability sectors.
+          With cutting-edge technology and ISO-certified facilities, we deliver
+          tailored solutions across multiple verticals.
         </p>
         <div className="lineBtn">
           <div className="border-line"></div>
@@ -75,7 +73,10 @@ const DesignServices = () => {
           <div id={section.id} key={index}>
             <Row className="my-5">
               <Col md={6}>
-                <h2 className="fw-bold mb-3" style={{ textTransform: "uppercase" }}>
+                <h2
+                  className="fw-bold mb-3"
+                  style={{ textTransform: "uppercase" }}
+                >
                   {section.heading}
                 </h2>
                 <p className="fs-5" style={{ textAlign: "justify" }}>
@@ -83,7 +84,11 @@ const DesignServices = () => {
                 </p>
               </Col>
               <Col md={6}>
-                <img src={section.imgSrc} alt={section.heading} className="img-fluid" />
+                <img
+                  src={section.imgSrc}
+                  alt={section.heading}
+                  className="img-fluid"
+                />
               </Col>
             </Row>
 
@@ -91,8 +96,8 @@ const DesignServices = () => {
             <div className="lineBtn my-5">
               <div className="border-line"></div>
               <Button onClick={() => handleButtonClick(index)}>
-              {activeSection === index ? "Read Less" : "Read More"}
-                </Button>
+                {activeSection === index ? "Read Less" : "Read More"}
+              </Button>
             </div>
 
             {/* Display Related Products directly after clicking Read More */}
@@ -102,7 +107,11 @@ const DesignServices = () => {
                 <Row>
                   {relatedProductsData.map((product, idx) => (
                     <Col md={4} key={idx} className="text-center my-3">
-                      <img src={product.imgSrc} alt={product.title} className="img-fluid mb-2" />
+                      <img
+                        src={product.imgSrc}
+                        alt={product.title}
+                        className="img-fluid mb-2"
+                      />
                       <h5>{product.title}</h5>
                     </Col>
                   ))}

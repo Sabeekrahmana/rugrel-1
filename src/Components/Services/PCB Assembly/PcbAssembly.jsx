@@ -41,10 +41,9 @@ const PcbAssembly = () => {
         heading="PCB ASSEMBLY"
       />
       <Container className="my-5">
-        <h1 className="fw-bold text-center mb-4">PCB Assembly</h1>
+        <h1 className="fw-bold text-center mb-4">3. PCB Assembly Services</h1>
         <p className="text-justify mb-5">
-          At our facility, we provide top-notch PCB assembly services to meet your specific needs. Whether you require a simple board or a complex, multi-layer PCB, we have the expertise to deliver high-quality results.
-          ZMicro’s line of lightweight, rack-mountable rugged servers and computers are integrated with the latest technology provided in the COTS marketplace. Flexible 1U, 2U and 3U form factors and future-proof system architectures offer you the latest multi-core processing options. ZMicro offers four families of customizable rugged servers and computer including; the ZE embedded computer series, ZM ultra-lightweight rugged computer series, ZXC lightweight server series, and the ZX rugged server series.
+        At Rug-Rel, we provide end-to-end PCB assembly services, including surface-mount technology (SMT) and through-hole technology (THT). Our advanced assembly processes ensure that PCBs are built to precise specifications, with rigorous quality control at each step to ensure reliability. We specialize in defense-grade PCB assembly, focusing on high-frequency, RF, and multi-layer boards that meet strict military standards. Our ESD-protected facilities guarantee the highest levels of safety and performance in every assembly.
         </p>
         <Row>
           {pcbData.map((item) => (
