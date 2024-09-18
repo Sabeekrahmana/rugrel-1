@@ -377,7 +377,7 @@ const HeadNavBar = () => {
 
                 {/* Contact Us */}
                 <Nav.Link className="fw-bold navItem" href="/contactus">
-                  Contact
+                  Contact US
                 </Nav.Link>
               </Nav>
 
