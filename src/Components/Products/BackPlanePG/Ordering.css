@@ -1,0 +1,82 @@
+.dropcolor {
+  border: 1px solid rgb(214, 213, 213);
+  background-color: aliceblue;
+  color: black;
+  &:hover {
+    background-color: rgb(207, 27, 207);
+    border: none;
+  }
+  &:focus {
+    background-color: rgb(207, 27, 207);
+
+    border: none;
+  }
+}
+.ImgToggle {
+  width: 300px !important;
+  max-height: 350px !important;
+}
+.pcb_image{
+  width: 100% !important;
+  max-width: 150px !important;
+}
+.onclickbtn{
+  width: 250px !important;
+  height: 60px !important;
+  border-radius: 5px !important;
+  font-size: 20px !important;
+  background-color: #800080 !important;
+  &:hover{
+    background-color: #fff !important;
+  }
+}
+#dropdown-backplane,
+#dropdown-slots {
+  width: 200px !important;
+}
+
+.InfoBut {
+  width: 90px;
+  height: 40px;
+  border: none;
+  background-color: rgb(179, 4, 179);
+  color: #eeecec;
+  border-radius: 20px;
+  font-weight: 700;
+  transition: 0.3s;
+  &:hover {
+    border: 3px solid purple;
+    background-color: #fff;
+    color: purple;
+  }
+  &:focus {
+    background-color: rgb(207, 27, 207);
+  }
+}
+
+.no-resize {
+  resize: none;
+}
+
+@media (max-width: 480px) {
+  .sizeorder {
+    font-size: 16px !important;
+    font-size: 400 !important;
+  }
+  #dropdown-backplane,
+  #dropdown-slots {
+    width: 150px !important;
+  }
+  .InfoBut {
+    width: 60px;
+    height: 38px;
+    font-weight: 500;
+  }
+}
+@media (min-width: 768px) and (max-width: 993px) {
+  .InfoBut {
+    width: 60px;
+    height: 38px;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,27 @@
+.purple-button {
+    background-color: purple !important;
+    border-color: purple !important;
+    color: #ffffff !important;
+    /* border:  none !important; */
+    height: 40px;
+    /* width: 200px; */
+    outline: none;
+    border-radius: 7px;
+    border: 3px solid  purple ;
+
+  
+    &:hover {
+      background-color: whitesmoke !important;
+      color: purple !important;
+      border-color: purple !important;
+      transition: 0.9s;
+    }
+  }
+  
+  .purple-button,
+  .purple-button:focus,
+  .purple-button:active {
+    background-color: purple !important;
+    color: white !important;
+    border-color: purple !important;
+  }

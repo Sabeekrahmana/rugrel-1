@@ -1,0 +1,161 @@
+.DataNav {
+  padding: 10px !important;
+  border-radius: 20px !important;
+  margin-bottom: 20px;
+  color: #000;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  font-weight: 650 !important;
+  &:focus {
+    background-color: plum;
+  }
+}
+
+/* <---------------info-----------------> */
+.imageinfo {
+  width: 100%;
+  max-width: 230px;
+}
+.infoData {
+  height: 100%;
+  border-top-right-radius: 60px;
+  background-color: #fb3bf452 !important;
+  font-size: small !important;
+  text-wrap: wrap;
+  padding: 0px;
+}
+.infoData > p {
+  font-size: largeR;
+  font-weight: 500;
+}
+
+.infoimg {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #eeecec;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1) inset, 0px 0px 10px #cfc8cf52 inset;
+  background-color: #fff;
+  font-size: small;
+  text-wrap: wrap;
+  padding: 30px;
+
+}
+
+.Info-Flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .infoimg {
+    height: auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .imageinfo {
+    display: block !important;
+    margin: auto !important;
+  }
+  .infoData {
+    height: auto;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+
+  /* <---------------DisplayData--------------> */
+  .DS_Data-one,
+  .DS_Data-two {
+    font-size: 14px;
+  }
+  /* --------------------- displayfeature-------------------- */
+}
+
+/* <---------------DisplayData--------------> */
+
+.DS_Data-one {
+  background-color: purple;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-top: 10px;
+  color: aliceblue;
+}
+.DS_Data-two {
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-top: 10px;
+
+  color: #000;
+}
+.displaydata {
+  margin: 50px auto;
+  border-radius: 40px;
+}
+
+/* --------------------- displayfeature-------------------- */
+.disFeatures {
+  border-radius: 20px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  padding: 30px;
+  font-size: 15px;
+  color: #000;
+  background-color: #fb3bf452;
+}
+.rugbtn {
+  width: 120px;
+  height: 40px;
+  border: none;
+  background-color: purple;
+  color: #eeecec;
+  border-radius: 20px;
+  font-weight: 700;
+  transition: 3s;
+  &:hover {
+    border: 2px solid purple;
+    background-color: #fff;
+    color: purple;
+  }
+}
+
+/* ----------------slider  */
+.slick-slide > div {
+  margin: 0 10px;
+}
+.slick-slide > div :focus-visible {
+  outline: none !important;
+}
+.Slider-img {
+  width: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.service_slider {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.alterpro{
+ height: 300px !important;
+}
+/* .proimg {
+  width: 100% !important;
+  height: 100% !important;
+}
+  */

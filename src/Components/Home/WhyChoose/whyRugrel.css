@@ -1,0 +1,66 @@
+.whySection {
+    position: relative; 
+    background: url('/src/Assets/images/FPGA.webp') no-repeat center center;
+    background-size: cover;
+    /* height: 100vh;  */
+    overflow: hidden;
+    color: #fff;
+  }
+  
+  .whySection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    filter: blur(5px); 
+    z-index: 1;
+  }
+
+  .whyCard {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-left: 3px solid #fe4cfe !important;
+    border-radius: 0;
+    border: none;
+    /* margin: 20px; */
+    height: 100%;
+    /* margin: 20px 0; */
+}
+.whyBody{
+    text-align: start;
+}
+
+.whyTitle{
+    font-size: 24px;
+    display: block;
+    /* border-width: 10px; */
+    /* margin-bottom: 10px; */
+    padding-bottom: 0;
+
+    /* &:hover{
+        border-bottom: 3px solid purple;
+        transition: 0.5s ease ;
+        border-bottom-width: 5px;
+    } */
+}
+
+.line {
+    height: 5px;
+    width: 250px;
+    /* margin-bottom: 20px; */
+    cursor: pointer;
+
+    &:hover{
+        /* background-color: purple; */
+        border-bottom: 5px solid #fe4cfe;
+        transition: 0.5s ease-in ;
+        transition: opacity .35s, transform .35s;
+        transform: scaleX(0.3);
+    }
+}
