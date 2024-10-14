@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import sysIntBanner from '../../../Assets/images/ServicesImg/ban4.jpg'; 
-import partImg1 from '../../../Assets/images/ServicesImg/ser4.jpg'; 
-import partImg2 from '../../../Assets/images/ServicesImg/ser5.jpg'; 
-import partImg3 from '../../../Assets/images/ServicesImg/ser6.jpg'; 
-import partImg4 from '../../../Assets/images/ServicesImg/ser7.jpg'; 
-import "../ServicePages.css"; 
+import partImg1 from '../../../Assets/images/ServicesImg/ser4.jpg';
+import partImg2 from '../../../Assets/images/ServicesImg/ser5.jpg';
+import partImg3 from '../../../Assets/images/Img-Mech-dsn/Cable Assemly/system-integration.jpg';
+import '../ServicePages.css';
 import SecondBanner from '../../AboutUs/BannerPage/SecondBanner';
 import ServiceBanner from '../ServiceBanners/ServiceBanner';
-import ban4 from "../../../Assets/images/ServicesImg/manufacture.jpg"; 
+import ban4 from "../../../Assets/images/ServicesImg/manufacture.jpg";
 import HeadNavBar from '../../HEADER/HeadNavBar';
 import Footer from '../../FOOTER/Footer';
-import ser1 from "../../../Assets/images/ServicesImg/ser5.jpg";
-
-
 
 const SystemIntegration = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -24,110 +19,79 @@ const SystemIntegration = () => {
     setActiveSection(activeSection === index ? null : index);
   };
 
-  const integrationSections = [
-    {
-      id: "part-1",
-      title: "Part 1 Title",
-      content: "Description of the first part of system integration. Provide detailed information about what this part includes and why it's important.",
-      imgSrc: partImg1,
-      imgAlt: "Part 1 Image"
-    },
-    {
-      id: "part-2",
-      title: "Part 2 Title",
-      content: "Description of the second part of system integration. Provide details that help clients understand this part of the service.",
-      imgSrc: partImg2,
-      imgAlt: "Part 2 Image"
-    },
-    {
-      id: "part-3",
-      title: "Part 3 Title",
-      content: "Description of the third part of system integration. Highlight key points and processes involved in this stage.",
-      imgSrc: partImg3,
-      imgAlt: "Part 3 Image"
-    },
-    {
-      id: "part-4",
-      title: "Part 4 Title",
-      content: "Description of the fourth part of system integration. Explain the importance and benefits of this part to potential clients.",
-      imgSrc: partImg4,
-      imgAlt: "Part 4 Image"
-    }
-  ];
-
   const relatedProductsData = [
-    { imgSrc: ser1, title: "Product 1" },
-    { imgSrc: ser1, title: "Product 2" },
-    { imgSrc: ser1, title: "Product 3" },
+    { imgSrc: partImg1, title: "Related Product 1" },
+    { imgSrc: partImg2, title: "Related Product 2" },
+    { imgSrc: partImg3, title: "Related Product 3" }
   ];
-
 
   return (
     <>
       <HeadNavBar />
-      <ServiceBanner 
-        imageUrl= {ban4}  
-        heading="SYSTEM INTEGRATION"
-      />
-      
-      {/* Heading and Paragraph */}
+      <ServiceBanner imageUrl={ban4} heading="SYSTEM INTEGRATION" />
+
       <Container className="my-5">
-        <h1 className="fw-bold">5.1 Sub-System & System Integration</h1>
-        <p className="fs-5" style={{ textAlign: "justify" }}>
-        Our system integration services involve the seamless integration of mechanical and electronic subsystems into fully operational defense systems. We provide end-to-end integration, including hardware, software, and firmware, ensuring that all components work together efficiently. We also offer testing and validation services to ensure the systems meet all necessary defense and aerospace standards.        </p>
-      </Container>
+        <h1 className="fw-bold mb-4">5.1 Sub-System & System Integration</h1>
+        <p className="text-justify mb-5">
+          Our system integration services involve the seamless integration of mechanical and electronic subsystems into fully operational defense systems. We provide end-to-end integration, including hardware, software, and firmware, ensuring that all components work together efficiently. We also offer testing and validation services to ensure the systems meet all necessary defense and aerospace standards.
+        </p>
 
-      {/* Banner */}
-      <div className="integrationBanner" style={{ padding: "30px 60px", margin: "40px 0", height: "300px" }}>
-        <img src={sysIntBanner} alt="System Integration Banner" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-      </div>
+        {/* Main Image Above Description */}
+        {/* <Row className="my-5">
+          <Col md={12} className="text-center">
+            <img
+              src={sysIntBanner}
+              alt="System Integration"
+              className="img-fluid mb-4"
+            />
+          </Col>
+        </Row> */}
 
-      {/* Integration Sections */}
-      <Container>
-        {integrationSections.map((section, index) => (
-          <div key={index}>
-            <Row className="align-items-center my-5">
-              <Col md={6}>
-                <h2 className="fw-bold">{section.title}</h2>
-                <p className="fs-5" style={{ textAlign: "justify" }}>
-                  {section.content}
-                </p>
-              </Col>
-              <Col md={6}>
-                <img src={section.imgSrc} alt={section.imgAlt} className="img-fluid" />
-              </Col>
+        {/* 3 Images in a Row */}
+        <Row className="text-center my-5">
+          <Col md={4}>
+            <img src={partImg1} alt="Part 1" className="img-fluid mb-3" />
+            <h5>Part 1 Title</h5>
+          </Col>
+          <Col md={4}>
+            <img src={partImg2} alt="Part 2" className="img-fluid mb-3" />
+            <h5>Part 2 Title</h5>
+          </Col>
+          <Col md={4}>
+            <img src={partImg3} alt="Part 3" className="img-fluid mb-3" />
+            <h5>Part 3 Title</h5>
+          </Col>
+        </Row>
+
+        {/* Line and Button */}
+        <div className="lineBtn my-5">
+          <div className="border-line"></div>
+          <Button onClick={() => handleButtonClick(0)}>
+            {activeSection === 0 ? "Read Less" : "Read More"}
+          </Button>
+        </div>
+
+        {/* Related Products */}
+        {activeSection === 0 && (
+          <div className="my-4">
+            <h4>Related Products</h4>
+            <Row>
+              {relatedProductsData.map((product, idx) => (
+                <Col md={4} key={idx} className="text-center my-3">
+                  <img
+                    src={product.imgSrc}
+                    alt={product.title}
+                    className="img-fluid mb-2"
+                  />
+                  <h5>{product.title}</h5>
+                </Col>
+              ))}
             </Row>
-
-            {/* Line and Button */}
-            <div className="lineBtn my-5">
-              <div className="border-line"></div>
-              <Button onClick={() => handleButtonClick(index)}>
-                {activeSection === index ? "Read Less" : "Read More"}
-              </Button>
-            </div>
-
-            {/* Display Related Products directly after clicking Read More */}
-            {activeSection === index && (
-              <div className="my-4">
-                <h4>Related Products</h4>
-                <Row>
-                  {relatedProductsData.map((product, idx) => (
-                    <Col md={4} key={idx} className="text-center my-3">
-                      <img
-                        src={product.imgSrc}
-                        alt={product.title}
-                        className="img-fluid mb-2"
-                      />
-                      <h5>{product.title}</h5>
-                    </Col>
-                  ))}
-                </Row>
-              </div>
-            )}
           </div>
-        ))}
+        )}
       </Container>
-       <SecondBanner />
+
+      <SecondBanner />
       <Footer />
     </>
   );

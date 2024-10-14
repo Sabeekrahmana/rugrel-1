@@ -1,23 +1,25 @@
-import React, { useEffect } from 'react';
-import TitleData from '../../TitleData/TitleData';
-import ProductsData from '../../ProductInfo&Data/ProductsData';
-import { PD_Data, ProductsAllData, ProductsAllText } from '../../ProductInfo&Data/ProductsAllData';
-import ProductsInfo from '../../ProductInfo&Data/ProductsInfo';
-import DisplayData from '../../ProductInfo&Data/DisplayData';
-import ProductFeature from '../../ProductInfo&Data/ProductFeature';
-import ContactDetail from '../../../ContactUs/ContactDetail';
-import ContactMap from '../../../ContactUs/ContactMap';
-import HeadNavBar from '../../../HEADER/HeadNavBar';
-import Footer from '../../../FOOTER/Footer';
-import MapDetails from '../../../ContactUs/MapDetails';
+import React, { useEffect } from "react";
+import TitleData from "../../TitleData/TitleData";
+import ProductsData from "../../ProductInfo&Data/ProductsData";
+import { PD_Data } from "../../ProductInfo&Data/ProductsAllData";
+import ProductsInfo from "../../ProductInfo&Data/ProductsInfo";
+import DisplayData from "../../ProductInfo&Data/DisplayData";
+import ProductFeature from "../../ProductInfo&Data/ProductFeature";
+import ContactDetail from "../../../ContactUs/ContactDetail";
+import ContactMap from "../../../ContactUs/ContactMap";
+import HeadNavBar from "../../../HEADER/HeadNavBar";
+import Footer from "../../../FOOTER/Footer";
+import MapDetails from "../../../ContactUs/MapDetails";
+import { AllFeatureData } from "../../ProductInfo&Data/AllFeatureData";
+import { AllDescriptionData } from "../../ProductInfo&Data/AllDescriptionData";
+import { AllImagesData } from "../../ProductInfo&Data/AllImagesData";
 
 const RugTablets = () => {
-
   useEffect(() => window.scroll(0, 0), []);
 
   return (
     <>
-    <HeadNavBar />
+      <HeadNavBar />
       <TitleData Title=" Rugged Tablet" />
       <ProductsData
         data={[
@@ -69,9 +71,9 @@ const RugTablets = () => {
       <ProductsInfo
         id="Tablet1"
         mainTitle="Rug-Rel 10.1 Inch Rugged Tablet "
-        head="Rug-Rel 10.1 Inch Rugged Tablet"
-        img={ProductsAllText.img_Tablet1}
-        texts={ProductsAllText.texts_Tablet1}
+        head="Rug-Rel 10.1 Inch Rugged Tablet Description"
+        sliderImages={AllImagesData.sliderImages_Tap_one}
+        texts={AllDescriptionData.texts_Tablet1}
       />
       <DisplayData
         PDD1="MIL STD 704F "
@@ -81,40 +83,40 @@ const RugTablets = () => {
         PTD2="Complied"
         PTD3="Complied"
       />
-      <ProductFeature features={ProductsAllData.featureList_Tablet1} />
+      <ProductFeature features={AllFeatureData.featureList_Tablet1} />
       <ProductsInfo
         id="Tablet2"
         mainTitle="Rug-Rel 12.2 Inch Rugged Tablet "
-        head="Rug-Rel 12.2 Inch Rugged Tablet"
-        img={ProductsAllText.img_Tablet2}
-        texts={ProductsAllText.texts_Tablet2}
+        head="Rug-Rel 12.2 Inch Rugged Tablet Description"
+        sliderImages={AllImagesData.sliderImages_Tap_two}
+        texts={AllDescriptionData.texts_Tablet2}
       />
-      <ProductFeature features={ProductsAllData.featureList_Tablet2} />
+      <ProductFeature features={AllFeatureData.featureList_Tablet2} />
       {/*  */}
       <ProductsInfo
         id="Tablet3"
         mainTitle="RZ-I86HH Rugged Tablet "
-        head="RZ-I86HH Rugged Tablet"
-        img={ProductsAllText.img_Tablet3}
-        texts={ProductsAllText.texts_Tablet3}
+        head="RZ-I86HH Rugged Tablet Description"
+        sliderImages={AllImagesData.sliderImages_Tap_three}
+        texts={AllDescriptionData.texts_Tablet3}
       />
-      <ProductFeature features={ProductsAllData.featureList_Tablet3} />
+      <ProductFeature features={AllFeatureData.featureList_Tablet3} />
       <ProductsInfo
         id="Tablet4"
         mainTitle="RZ-Q86 Rugged Tablet "
-        head="RZ-Q86 Rugged Tablet"
-        img={ProductsAllText.img_Tablet4}
-        texts={ProductsAllText.texts_Tablet4}
+        head="RZ-Q86 Rugged Tablet Description"
+        sliderImages={AllImagesData.sliderImages_Tap_four}
+        texts={AllDescriptionData.texts_Tablet4}
       />
-      <ProductFeature features={ProductsAllData.featureList_Tablet4} />
+      <ProductFeature features={AllFeatureData.featureList_Tablet4} />
       <ProductsInfo
         id="Tablet5"
         mainTitle="RZ-Q865M Rugged Tablet"
-        head="RZ-Q865M Rugged Tablet"
-        img={ProductsAllText.img_Tablet5}
-        texts={ProductsAllText.texts_Tablet5}
+        head="RZ-Q865M Rugged Tablet Description"
+        sliderImages={AllImagesData.sliderImages_Tap_five}
+        texts={AllDescriptionData.texts_Tablet5}
       />
-      <ProductFeature features={ProductsAllData.featureList_Tablet5} />
+      <ProductFeature features={AllFeatureData.featureList_Tablet5} />
 
       <ContactDetail />
       <ContactMap />
@@ -122,6 +124,6 @@ const RugTablets = () => {
       <Footer />
     </>
   );
-}
+};
 
 export default RugTablets;

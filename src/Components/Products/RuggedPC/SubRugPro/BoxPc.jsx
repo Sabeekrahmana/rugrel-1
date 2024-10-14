@@ -3,13 +3,16 @@ import TitleData from '../../TitleData/TitleData';
 import ProductsInfo from '../../ProductInfo&Data/ProductsInfo';
 import DisplayData from '../../ProductInfo&Data/DisplayData';
 import ProductFeature from '../../ProductInfo&Data/ProductFeature';
-import { PD_Data, ProductsAllData, ProductsAllText } from '../../ProductInfo&Data/ProductsAllData';
+import { PD_Data} from '../../ProductInfo&Data/ProductsAllData';
 import ProductsData from '../../ProductInfo&Data/ProductsData';
 import ContactDetail from '../../../ContactUs/ContactDetail';
 import ContactMap from '../../../ContactUs/ContactMap';
 import HeadNavBar from '../../../HEADER/HeadNavBar';
 import Footer from '../../../FOOTER/Footer';
 import MapDetails from '../../../ContactUs/MapDetails';
+import { AllFeatureData } from '../../ProductInfo&Data/AllFeatureData';
+import { AllDescriptionData } from '../../ProductInfo&Data/AllDescriptionData';
+import { AllImagesData } from '../../ProductInfo&Data/AllImagesData';
 
 const BoxPc = () => {
 
@@ -41,9 +44,9 @@ const BoxPc = () => {
       <ProductsInfo
         id="box1"
         mainTitle="Military Grade Rugged BOX PC"
-        head="Military Grade Rugged BOX PC"
-        img={ProductsAllText.img_Box1}
-        texts={ProductsAllText.texts_Box1}
+        head="Rugged Box PC Description"
+        sliderImages={AllImagesData.sliderImages_Box}
+        texts={AllDescriptionData.texts_Box1}
       />
       <DisplayData
         PDD1="MIL STD 704F "
@@ -53,7 +56,7 @@ const BoxPc = () => {
         PTD2="Complied"
         PTD3="Complied"
       />
-      <ProductFeature features={ProductsAllData.featureList_Box1} />
+      <ProductFeature features={AllFeatureData.featureList_Box1} />
 
       <ContactDetail />
       <ContactMap />

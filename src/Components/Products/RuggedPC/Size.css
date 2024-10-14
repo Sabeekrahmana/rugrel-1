@@ -1,0 +1,31 @@
+
+.squarSize {
+height: 40px !important;
+border: 2px solid purple !important;
+border-radius: 4px !important;
+}
+.sizeBtn{
+    color: black;
+    font-weight: 700;
+}
+.MainCards{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.ListGroup{
+height: 40px !important;
+border: 1px solid purple !important;
+color: black;
+font-size: 14px !important;
+margin: 4px;
+font-weight: 700;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 8px;
+margin: 4px !important;
+cursor: pointer;
+}
+.fs-7{
+    font-size: 13px ;
+    font-weight: 500;
+}

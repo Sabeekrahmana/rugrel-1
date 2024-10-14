@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import TitleData from '../TitleData/TitleData';
 import ProductsData from '../ProductInfo&Data/ProductsData';
-import { PD_Data, ProductsAllData, ProductsAllText } from '../ProductInfo&Data/ProductsAllData';
+import { PD_Data } from '../ProductInfo&Data/ProductsAllData';
 import ProductsInfo from '../ProductInfo&Data/ProductsInfo';
 import DisplayData from '../ProductInfo&Data/DisplayData';
 import ProductFeature from '../ProductInfo&Data/ProductFeature';
@@ -10,6 +10,9 @@ import ContactDetail from '../../ContactUs/ContactDetail';
 import HeadNavBar from '../../HEADER/HeadNavBar';
 import Footer from '../../FOOTER/Footer';
 import MapDetails from '../../ContactUs/MapDetails';
+import { AllFeatureData } from '../ProductInfo&Data/AllFeatureData';
+import { AllDescriptionData } from '../ProductInfo&Data/AllDescriptionData';
+import { AllImagesData } from '../ProductInfo&Data/AllImagesData';
 
 const Workstation = () => {
 
@@ -17,8 +20,8 @@ const Workstation = () => {
 
   return (
     <>
-    <HeadNavBar />
-      <TitleData Title=" Rug-Rel Work Station " />
+      <HeadNavBar />
+      <TitleData Title=" Rug-Rel Workstation " />
       <ProductsData
         data={[
           {
@@ -39,10 +42,10 @@ const Workstation = () => {
       />
       <ProductsInfo
         id="W"
-        mainTitle=" work Station "
-        head=" work Station "
-        img={ProductsAllText.img_W1}
-        texts={ProductsAllText.texts_W1}
+        mainTitle=" WorkStation "
+        head=" WorkStation Description "
+        sliderImages={AllImagesData.sliderImagesWorksation_one}
+        texts={AllDescriptionData.texts_W1}
       />
       <DisplayData
         PDD1="MIL STD 704F "
@@ -52,7 +55,7 @@ const Workstation = () => {
         PTD2="Complied"
         PTD3="Complied"
       />
-      <ProductFeature features={ProductsAllData.featureList_W1} />
+      <ProductFeature features={AllFeatureData.featureList_W1} />
       <ContactDetail />
       <ContactMap />
       <MapDetails />

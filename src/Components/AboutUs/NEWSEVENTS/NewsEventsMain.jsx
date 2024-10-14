@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row, Pagination } from "react-bootstrap";
 import "../AboutUs.css";
 import ab1 from "../../../Assets/images/AboutImg/ab1.jpg";
@@ -12,6 +12,9 @@ import {
 } from "react-icons/fa";
 
 const NewsEventsMain = () => {
+
+  useEffect(() => window.scroll(0, 0), []);
+
   
   // Array of card data
   const cardData = [

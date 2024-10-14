@@ -2,9 +2,7 @@ import React, { useEffect } from "react";
 import TitleData from "../TitleData/TitleData";
 import ProductsData from "../ProductInfo&Data/ProductsData";
 import {
-  PD_Data,
-  ProductsAllText,
-  ProductsAllData,
+  PD_Data
 } from "../ProductInfo&Data/ProductsAllData";
 import ProductsInfo from "../ProductInfo&Data/ProductsInfo";
 import DisplayData from '../ProductInfo&Data/DisplayData'
@@ -14,6 +12,9 @@ import ContactMap from "../../ContactUs/ContactMap";
 import HeadNavBar from "../../HEADER/HeadNavBar";
 import Footer from "../../FOOTER/Footer";
 import MapDetails from "../../ContactUs/MapDetails";
+import { AllFeatureData } from "../ProductInfo&Data/AllFeatureData";
+import { AllDescriptionData } from "../ProductInfo&Data/AllDescriptionData";
+import { AllImagesData } from "../ProductInfo&Data/AllImagesData";
 
 
 const RadarComputer = () => {
@@ -22,8 +23,8 @@ const RadarComputer = () => {
 
   return (
     <>
-    <HeadNavBar />
-      <TitleData Title="Radar Computer And ART " />
+      <HeadNavBar />
+      <TitleData Title="Radar Computer And ATR " />
       <ProductsData
         data={[
           {
@@ -44,10 +45,10 @@ const RadarComputer = () => {
       />
       <ProductsInfo
         id="RadarComputer"
-        mainTitle="Radar Computer Part"
-        head="Radar Computer"
-        img={ProductsAllText.img_RCA1}
-        texts={ProductsAllText.texts_RCA1}
+        mainTitle="Radar Computer "
+        head="Radar Computer Description"
+        sliderImages={AllImagesData.sliderImagesRadar_one}
+        texts={AllDescriptionData.texts_RCA1}
       />
       <DisplayData
         PDD1="MIL STD 704F "
@@ -57,16 +58,16 @@ const RadarComputer = () => {
         PTD2="Complied"
         PTD3="Complied"
       />
-      <ProductFeature features={ProductsAllData.featureList_RCA1} />
+      <ProductFeature features={AllFeatureData.featureList_RCA1} />
       <ProductsInfo
         id="ATR"
-        mainTitle="Radar Computer Part"
-        head="ATR Computer Parts"
-        img={ProductsAllText.img_RCA2}
-        texts={ProductsAllText.texts_RCA2}
+        mainTitle="  Rugged ATR"
+        head="ATR - Rugged Transportable Rack "
+        sliderImages={AllImagesData.sliderImagesRadar_two}
+        texts={AllDescriptionData.texts_RCA2}
       />
 
-      <ProductFeature features={ProductsAllData.featureList_RCA2} />
+      <ProductFeature features={AllFeatureData.featureList_RCA2} />
       <ContactDetail />
       <ContactMap />
       <MapDetails />

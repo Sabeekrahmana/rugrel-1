@@ -29,11 +29,11 @@ import Dual from "./Components/Products/DualMoniterConsole/Dual";
 import ServerWorkstation from "./Components/Products/ServerWorkstation/ServerWorkstation";
 import Workstation from "./Components/Products/ServerWorkstation/Workstation";
 import RugPC from "./Components/Products/RuggedPC/RugPC";
-import PanelPc from "./Components/Products/RuggedDisplaySolutions/PanelPc";
+import PanelPc from "./Components/Products/RuggedDisplaySolutions/RDSSub/PanelPc";
 import RugLoptop from "./Components/Products/RuggedPC/SubRugPro/RugLoptop";
 import RugTablets from "./Components/Products/RuggedPC/SubRugPro/RugTablets";
 import BoxPc from "./Components/Products/RuggedPC/SubRugPro/BoxPc";
-import CustomPSU from "./Components/Products/PowerSupplyUnit/Custom/CustomPSU";
+import CustomPSU from "./Components/Products/PowerSupplyUnit/SubPUSPage/CustomPSU";
 
 
 

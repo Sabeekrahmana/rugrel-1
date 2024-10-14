@@ -63,3 +63,19 @@ html {
   box-shadow: none !important;
   border: 1px solid rebeccapurple !important;
 }
+
+/* // Active */
+
+.activeNav {
+  background-color: purple !important; 
+  color: white !important;
+}
+
+.activeDropdown {
+  background-color: purple; 
+  color: white;
+}
+
+.navItem {
+  cursor: pointer;
+}
