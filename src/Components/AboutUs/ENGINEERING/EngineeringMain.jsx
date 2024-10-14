@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import "../AboutUs.css";
 import FirstBanner from "../BannerPage/FirstBanner";
 import SecondBanner from "../BannerPage/SecondBanner";
 
 const EngineeringMain = () => {
+
+  useEffect(() => window.scroll(0, 0), []);
+
   return (
     <>
       <FirstBanner />

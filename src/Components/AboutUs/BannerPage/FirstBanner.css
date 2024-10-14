@@ -89,7 +89,7 @@
   transform: translate(-50%, -50%);
   z-index: 2;
   width: 80%;
-  text-align: justify;
+  /* text-align: justify; */
   color: #000;
 }
 

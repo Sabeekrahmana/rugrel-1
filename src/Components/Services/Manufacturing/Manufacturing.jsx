@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import ban1 from "../../../Assets/images/ServicesImg/ban1.jpg"; 
-import ser3 from "../../../Assets/images/ServicesImg/ser8.jpg"; 
 import manBan from "../../../Assets/images/ServicesImg/ser8.jpg"; 
 import "../ServicePages.css";
 import ServiceBanner from "../ServiceBanners/ServiceBanner";
@@ -9,7 +8,8 @@ import SecondBanner from "../../AboutUs/BannerPage/SecondBanner";
 import { IoMdCheckboxOutline } from "react-icons/io";
 import HeadNavBar from "../../HEADER/HeadNavBar";
 import Footer from "../../FOOTER/Footer";
-import ser1 from "../../../Assets/images/ServicesImg/ser6.jpg";
+import proto from "../../../Assets/images/Img-Mech-dsn/proto.jpg";
+import mass from "../../../Assets/images/Img-Mech-dsn/mass.jpg";
 
 
 
@@ -43,21 +43,21 @@ const Manufacturig = () => {
       heading: "2.1 Prototype Manufacturing",
       content:
         "Rug-Rel offers rapid prototype manufacturing services, ensuring that initial designs meet all operational and environmental criteria. Our in-house team uses state-of-the-art manufacturing techniques to produce prototypes that adhere to defense and aerospace standards. Prototyping includes PCB assembly, cable harnessing, and mechanical components, enabling you to test and validate your designs in real-world conditions before committing to large-scale production.",
-      imgSrc: ser3, 
+      imgSrc: proto, 
     },
     {
       id: "mass-volume",
       heading: "2.2 Mass & Volume Production",
       content:
         "Our mass production services are designed to meet large-scale production demands while maintaining the highest quality standards. With advanced CNC machinery, laser cutting, and PCB assembly capabilities, Rug-Rel can handle the production of complex, high-precision electronic systems for defense and industrial applications. We ensure that every product meets ISO 9001 standards, and our scalable production processes allow us to handle both small batches and large orders efficiently.",
-      imgSrc: ser3, 
+      imgSrc: mass, 
     }
   ];
 
   const relatedProductsData = [
-    { imgSrc: ser1, title: "Product 1" },
-    { imgSrc: ser1, title: "Product 2" },
-    { imgSrc: ser1, title: "Product 3" },
+    { imgSrc: proto, title: "Product 1" },
+    { imgSrc: proto, title: "Product 2" },
+    { imgSrc: proto, title: "Product 3" },
   ];
 
   return (
@@ -100,12 +100,12 @@ const Manufacturig = () => {
                 <h2 className="fw-bold mb-3" style={{ textTransform: "uppercase" }}>
                   {section.heading}
                 </h2>
-                <p className="fs-5" style={{ textAlign: "justify" }}>
+                <p className="fs-10" style={{ textAlign: "justify" }}>
                   {section.content}
                 </p>
               </Col>
               <Col md={6}>
-                <img src={section.imgSrc} alt={section.heading} className="img-fluid" />
+                <img src={section.imgSrc} alt={section.heading} className="img-fluid my-5 single-image-size " />
               </Col>
             </Row>
 

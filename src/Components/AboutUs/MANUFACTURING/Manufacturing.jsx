@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import "../AboutUs.css";
 import SecondBanner from "../BannerPage/SecondBanner";
 
 const Manufacturing = () => {
+
+  useEffect(() => window.scroll(0, 0), []);
+
   return (
     <>
       <div className="">

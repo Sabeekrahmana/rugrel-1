@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "../ServicePages.css";
 import ServiceBanner from "../ServiceBanners/ServiceBanner";
-import ser1 from "../../../Assets/images/ServicesImg/ser1.jpg";
 import SecondBanner from "../../AboutUs/BannerPage/SecondBanner";
 import bannerImg from "../../../Assets/images/ServicesImg/serviceBanner.jpg";
 import HeadNavBar from "../../HEADER/HeadNavBar";
 import Footer from "../../FOOTER/Footer";
+import des from "../../../Assets/images/Img-Mech-dsn/des.jpg";
+import des2 from "../../../Assets/images/Img-Mech-dsn/FPGA.webp";
+import des3 from "../../../Assets/images/Img-Mech-dsn/pcb.jpg";
+
 
 const DesignServices = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -23,28 +26,28 @@ const DesignServices = () => {
       heading: "1.1 Mechanical Design Services",
       content:
         "Our mechanical design services are at the heart of every robust defense and aerospace system we build. Rug-Rel offers comprehensive design solutions that cover everything from conceptual modeling to the final product, ensuring that every system we create is optimized for functionality, durability, and performance in extreme conditions.",
-      imgSrc: ser1,
+      imgSrc: des,
     },
     {
       id: "fpga",
       heading: "1.2 FPGA Design Services",
       content:
         "Our FPGA design services cater to the unique needs of defense, aerospace, and industrial sectors. FPGA (Field-Programmable Gate Array) technology is critical for applications that require real-time processing, high data throughput, and flexible reconfiguration capabilities. Rug-Rel’s FPGA designs are built to handle advanced tasks such as signal processing, data encryption, and embedded computing, offering scalable solutions for defense-grade systems.We specialize in edge computing, AI/ML integration, and signal processing, ensuring that your systems remain adaptable and future-proof.",
-      imgSrc: ser1,
+      imgSrc: des2,
     },
     {
       id: "pcb",
       heading: "1.3 PCB Design Services",
       content:
         " Our PCB design services provide optimized layouts for high-speed, multi-layer PCB systems tailored for defense, aerospace, and industrial applications. We ensure compliance with industry standards for signal integrity, EMI/EMC protection, and manufacturability. We design multi-layer PCBs that support complex circuitry, ensuring reliability under harsh conditions. Rug-Rel’s PCB designs are engineered for high-frequency, RF, and mixed-signal applications, delivering seamless integration in critical systems.",
-      imgSrc: ser1,
+      imgSrc: des3,
     },
   ];
 
   const relatedProductsData = [
-    { imgSrc: ser1, title: "Product 1" },
-    { imgSrc: ser1, title: "Product 2" },
-    { imgSrc: ser1, title: "Product 3" },
+    { imgSrc: des, title: "Product 1" },
+    { imgSrc: des, title: "Product 2" },
+    { imgSrc: des, title: "Product 3" },
   ];
 
   return (
@@ -79,7 +82,7 @@ const DesignServices = () => {
                 >
                   {section.heading}
                 </h2>
-                <p className="fs-5" style={{ textAlign: "justify" }}>
+                <p className="fs-10" style={{ textAlign: "justify" }}>
                   {section.content}
                 </p>
               </Col>
@@ -87,7 +90,7 @@ const DesignServices = () => {
                 <img
                   src={section.imgSrc}
                   alt={section.heading}
-                  className="img-fluid"
+                  className="img-fluid design-image"
                 />
               </Col>
             </Row>

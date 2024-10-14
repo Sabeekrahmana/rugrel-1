@@ -16,6 +16,7 @@ import RugButton from "../Button/RugButton";
 const HeadNavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { pathname } = location; // Get current path
 
   const [showDropdown, setShowDropdown] = useState(false);
   const [showSubMenu, setShowSubMenu] = useState(false);
@@ -87,7 +88,9 @@ const HeadNavBar = () => {
               <Nav className="justify-content-center gap-4 flex-grow-1 navItems">
                 {/* About Us */}
                 <NavDropdown
-                  className="fw-bold navItem"
+                  className={`fw-bold navItem ${
+                    pathname.includes("/about") ? "activeNav" : ""
+                  }`}
                   title={
                     <>
                       About Us <FaCaretDown />
@@ -97,30 +100,50 @@ const HeadNavBar = () => {
                   onMouseOut={handleMouseOut}
                   show={showDropdown}
                 >
-                  <NavDropdown.Item href="whyfaq">
+                  <NavDropdown.Item  className={pathname === "/whyfaq" ? "activeNav" : ""} 
+                  onClick={(e) => handleDropdownNavigate("/whyfaq", e)}
+                >
                     Why Rug-Rel?
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="companyoverview">
+                  <NavDropdown.Item 
+                  className={pathname === "/companyoverview" ? "activeNav" : ""}
+                  onClick={(e) => handleDropdownNavigate("/companyoverview", e)}
+                   >
                     Company Overview
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/news-events">
+                  <NavDropdown.Item 
+                 className={pathname === "/news-events" ? "activeNav" : ""}
+                 onClick={(e) => handleDropdownNavigate("/news-events", e)}
+                 >
                     News & Events
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="management">
+                  <NavDropdown.Item 
+                  className={pathname === "/management" ? "activeNav" : ""}
+                  onClick={(e) => handleDropdownNavigate("/management", e)}
+                     >
                     Management Team
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="engineering">
+                  <NavDropdown.Item 
+                   className={pathname === "/engineering" ? "activeNav" : ""}
+                   onClick={(e) => handleDropdownNavigate("/engineering", e)}
+                   >
                     Engineering Excellence
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="manufacturing">
+                  <NavDropdown.Item 
+                   className={pathname === "/manufacturing" ? "activeNav" : ""}
+                   onClick={(e) => handleDropdownNavigate("/manufacturing", e)}
+                   >
                     Manufacturing Process
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="qualitystd">
+                  <NavDropdown.Item 
+                   className={pathname === "/qualitystd" ? "activeNav" : ""}
+                   onClick={(e) => handleDropdownNavigate("/qualitystd", e)}
+                   >
                     Quality Standards
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                {/*---------------------Products------------- */}
+                {/* ---------------------Products------------- */}
 
                 <NavDropdown
                   className="fw-bold navItem"
@@ -148,7 +171,10 @@ const HeadNavBar = () => {
                     onMouseOut={handleSubMenuMouseOut}
                     show={showSubMenu}
                   >
-                    <NavDropdown.Item
+                    <NavDropdown.Item 
+                     className={
+                      pathname === "/power-supply-unit/standard" ? "activeNav" : ""
+                    }
                       onClick={(e) =>
                         handleDropdownNavigate("/power-supply-unit", e)
                       }
@@ -156,12 +182,14 @@ const HeadNavBar = () => {
                       Standard
                     </NavDropdown.Item>
                     <NavDropdown.Item
+                     className={pathname === "/customPSU" ? "activeNav" : ""}
                       onClick={(e) => handleDropdownNavigate("/customPSU", e)}
                     >
                       Customised
                     </NavDropdown.Item>
                   </NavDropdown>
                   <NavDropdown.Item
+                   className={pathname === "/backplane" ? "activeNav" : ""}
                     onClick={(e) => handleDropdownNavigate("/backplane", e)}
                   >
                     BackPlane
@@ -174,6 +202,7 @@ const HeadNavBar = () => {
                     }
                     drop="end"
                     className="submenu"
+                    
                     onClick={(e) =>
                       handleDropdownNavigate("/rug-display-solutions", e)
                     }
@@ -313,14 +342,14 @@ const HeadNavBar = () => {
                     >
                       <NavDropdown.Item
                         onClick={() =>
-                          handleLinkClick("/designservices", "modeling")
+                          handleLinkClick("/designservices/mechanical/modeling", "modeling")
                         }
                       >
                         Modeling
                       </NavDropdown.Item>
                       <NavDropdown.Item
                         onClick={() =>
-                          handleLinkClick("/designservices", "thermal-analysis")
+                          handleLinkClick("/designservices/mechanical", "thermal-analysis")
                         }
                       >
                         Thermal Analysis
@@ -375,18 +404,14 @@ const HeadNavBar = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                {/* Contact Us */}
+                {/* -----------------Contact Us---------------------- */}
                 <Nav.Link className="fw-bold navItem" href="/contactus">
                   Contact US
                 </Nav.Link>
               </Nav>
 
               <Form className="d-flex mt-3  mt-lg-0">
-                {/* <Button className="fw-bold purple-button ms-5">
-                  REQUEST A QUOTE
-                </Button> */}
                 <RugButton label="REQUEST A QUOTE" href="#large" size="large" />
-
               </Form>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
