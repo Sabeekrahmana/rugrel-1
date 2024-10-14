@@ -8,12 +8,30 @@
   }
   &:focus {
     background-color: rgb(207, 27, 207);
-   
-     border: none;
+
+    border: none;
   }
 }
-
-#dropdown-backplane, #dropdown-slots {
+.ImgToggle {
+  width: 300px !important;
+  max-height: 350px !important;
+}
+.pcb_image{
+  width: 100% !important;
+  max-width: 150px !important;
+}
+.onclickbtn{
+  width: 250px !important;
+  height: 60px !important;
+  border-radius: 5px !important;
+  font-size: 20px !important;
+  background-color: #800080 !important;
+  &:hover{
+    background-color: #fff !important;
+  }
+}
+#dropdown-backplane,
+#dropdown-slots {
   width: 200px !important;
 }
 
@@ -40,26 +58,25 @@
   resize: none;
 }
 
-@media (max-width:480px) {
-  .sizeorder{
+@media (max-width: 480px) {
+  .sizeorder {
     font-size: 16px !important;
     font-size: 400 !important;
   }
-  #dropdown-backplane, #dropdown-slots {
-  width: 150px !important;
-}
-.InfoBut {
-  width: 60px;
-  height: 38px;
-  font-weight: 500;
-}
-
-}
-@media (min-width:768px) and (max-width:993px) {
+  #dropdown-backplane,
+  #dropdown-slots {
+    width: 150px !important;
+  }
   .InfoBut {
-  width: 60px;
-  height: 38px;
-  font-weight: 500;
+    width: 60px;
+    height: 38px;
+    font-weight: 500;
+  }
 }
-
+@media (min-width: 768px) and (max-width: 993px) {
+  .InfoBut {
+    width: 60px;
+    height: 38px;
+    font-weight: 500;
+  }
 }

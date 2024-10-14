@@ -18,7 +18,6 @@
 .infoData {
   height: 100%;
   border-top-right-radius: 60px;
-  /* border-bottom-right-radius: 20px; */
   background-color: #fb3bf452 !important;
   font-size: small !important;
   text-wrap: wrap;
@@ -33,16 +32,12 @@
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: #eeecec;
-  /* filter: drop-shadow(7px 6px 5px rgba(219, 70, 219, 0.521)); */
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1) inset, 0px 0px 10px #cfc8cf52 inset;
   background-color: #fff;
   font-size: small;
   text-wrap: wrap;
   padding: 30px;
-  &:hover {
-    /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1) inset, 0px 0px 10px #cfc8cf52 inset; */
-    filter: drop-shadow(7px 6px 5px rgba(219, 70, 219, 0.521));
-  }
+
 }
 
 .Info-Flex {
@@ -119,7 +114,7 @@
   color: #000;
   background-color: #fb3bf452;
 }
-.rugbtn{
+.rugbtn {
   width: 120px;
   height: 40px;
   border: none;
@@ -128,9 +123,39 @@
   border-radius: 20px;
   font-weight: 700;
   transition: 3s;
-  &:hover{
+  &:hover {
     border: 2px solid purple;
     background-color: #fff;
     color: purple;
   }
 }
+
+/* ----------------slider  */
+.slick-slide > div {
+  margin: 0 10px;
+}
+.slick-slide > div :focus-visible {
+  outline: none !important;
+}
+.Slider-img {
+  width: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.service_slider {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.alterpro{
+ height: 300px !important;
+}
+/* .proimg {
+  width: 100% !important;
+  height: 100% !important;
+}
+  */

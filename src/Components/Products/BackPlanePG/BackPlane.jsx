@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 import TitleData from "../TitleData/TitleData";
 import ProductsData from "../ProductInfo&Data/ProductsData";
-import {
-  PD_Data,
-  ProductsAllData,
-  ProductsAllText,
-} from "../ProductInfo&Data/ProductsAllData";
+import {PD_Data} from "../ProductInfo&Data/ProductsAllData";
 import ContactDetail from "../../ContactUs/ContactDetail";
 import ContactMap from "../../ContactUs/ContactMap";
 import ProductsInfo from "../ProductInfo&Data/ProductsInfo";
@@ -15,6 +11,10 @@ import OrderingInfo from "./OrderingInfo";
 import Footer from "../../FOOTER/Footer";
 import HeadNavBar from "../../HEADER/HeadNavBar";
 import MapDetails from "../../ContactUs/MapDetails";
+import { AllFeatureData } from "../ProductInfo&Data/AllFeatureData";
+import { AllImagesData } from "../ProductInfo&Data/AllImagesData";
+import { AllDescriptionData } from "../ProductInfo&Data/AllDescriptionData";
+import ImageToggleComponent from "./ImageToggleComponent";
 
 
 const BackPlane = () => {
@@ -23,7 +23,7 @@ const BackPlane = () => {
   
   return (
     <>
-    <HeadNavBar />
+      <HeadNavBar />
       <TitleData Title="BackPlane Power Supply Unit" />
       <ProductsData
         data={[
@@ -73,11 +73,13 @@ const BackPlane = () => {
       />
       <ProductsInfo
         id="VPX"
-        mainTitle="VPX Back Plane Desgin "
-        head="VPX Backplane Part"
-        img={ProductsAllText.img_BP1}
-        texts={ProductsAllText.texts_BP1}
+        mainTitle="VPX Backplane  "
+        head="VPX Backplane  Description"
+        sliderImages={AllImagesData.sliderImages_BP1}
+        texts={AllDescriptionData.texts_BP1}
       />
+      <ImageToggleComponent />
+
       <DisplayData
         PDD1="MIL STD 704F "
         PDD2="MIL STD 461F "
@@ -86,62 +88,62 @@ const BackPlane = () => {
         PTD2="Complied"
         PTD3="Complied"
       />
-      <ProductFeature features={ProductsAllData.featureList_BP1} />
+      <ProductFeature features={AllFeatureData.featureList_BP1} />
       {/* <-----------------------------second--------------------> */}
       <ProductsInfo
         id="VME"
-        mainTitle="VME Back Plane Desgin "
-        head="VME Backplane Part"
-        img={ProductsAllText.img_BP2}
-        texts={ProductsAllText.texts_BP2}
+        mainTitle="VME Backplane  "
+        head="VME Backplane Description "
+        sliderImages={AllImagesData.sliderImages_sec}
+        texts={AllDescriptionData.texts_BP2}
       />
-      <ProductFeature features={ProductsAllData.featureList_BP2} />
+      <ProductFeature features={AllFeatureData.featureList_BP2} />
       {/* <-----------------------------third--------------------> */}
       <ProductsInfo
         id="VME64X"
-        mainTitle="VME64X Back Plane Desgin "
-        head="VME64X Backplane Part"
-        img={ProductsAllText.img_BP3}
-        texts={ProductsAllText.texts_BP3}
+        mainTitle="VME64X Backplane "
+        head="VME64X Backplane  Description"
+        sliderImages={AllImagesData.sliderImages_three}
+        texts={AllDescriptionData.texts_BP3}
       />
-      <ProductFeature features={ProductsAllData.featureList_BP3} />
+      <ProductFeature features={AllFeatureData.featureList_BP3} />
       {/* <-----------------------------fourth--------------------> */}
       <ProductsInfo
         id="VSX"
-        mainTitle="VSX Back Plane Desgin "
-        head="VSX Backplane Part"
-        img={ProductsAllText.img_BP4}
-        texts={ProductsAllText.texts_BP4}
+        mainTitle="VSX Backplane"
+        head="VSX Backplane "
+        sliderImages={AllImagesData.sliderImages_four}
+        texts={AllDescriptionData.texts_BP4}
       />
-      <ProductFeature features={ProductsAllData.featureList_BP4} />
+      <ProductFeature features={AllFeatureData.featureList_BP4} />
       {/* <-----------------------------fith--------------------> */}
       <ProductsInfo
         id="Compact"
-        mainTitle="Compact PCI  Back Plane Desgin "
-        head="Compact PCI  Backplane Part"
-        img={ProductsAllText.img_BP5}
-        texts={ProductsAllText.texts_BP5}
+        mainTitle="Compact PCI  Backplane "
+        head="Compact PCI  Backplane Description"
+        sliderImages={AllImagesData.sliderImages_five}
+        texts={AllDescriptionData.texts_BP5}
       />
-      <ProductFeature features={ProductsAllData.featureList_BP5} />
+      <ProductFeature features={AllFeatureData.featureList_BP5} />
       {/* <-----------------------------sixth--------------------> */}
       <ProductsInfo
         id="Open"
-        mainTitle="3U 3Slot Open VPX Backplane "
-        head="3U 3Slot Open VPX Backplane"
-        img={ProductsAllText.img_BP6}
-        texts={ProductsAllText.texts_BP6}
+        mainTitle="Customize Backplane "
+        head="Customize Backplane Description"
+        sliderImages={AllImagesData.sliderImages_six}
+        texts={AllDescriptionData.texts_BP6}
       />
-      <ProductFeature features={ProductsAllData.featureList_BP6} />
-      {/* <-----------------------------sixth--------------------> */}
-      <ProductsInfo
+      <ProductFeature features={AllFeatureData.featureList_BP6} />
+      {/* <-----------------------------seven--------------------> */}
+      {/* <ProductsInfo
         mainTitle="6U/7U VME64X  Backplane "
-        head="6U/7U VME64X Backplane"
-        img={ProductsAllText.img_BP7}
-        texts={ProductsAllText.texts_BP7}
+        head="6U/7U VME64X Backplane Description"
+        sliderImages={AllImagesData.sliderImages_seven}
+        texts={AllDescriptionData.texts_BP7}
       />
-      <ProductFeature features={ProductsAllData.featureList_BP7} />
+      <ProductFeature features={AllFeatureData.featureList_BP7} /> */}
 
-      <OrderingInfo/>
+      <OrderingInfo />
       <ContactDetail />
       <ContactMap />
       <MapDetails />

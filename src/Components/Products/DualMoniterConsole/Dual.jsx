@@ -3,8 +3,6 @@ import TitleData from "../TitleData/TitleData";
 import ContactDetail from "../../ContactUs/ContactDetail";
 import ContactMap from "../../ContactUs/ContactMap";
 import {
-  ProductsAllData,
-  ProductsAllText,
   PD_Data,
 } from "../ProductInfo&Data/ProductsAllData";
 import ProductFeature from "../ProductInfo&Data/ProductFeature";
@@ -14,6 +12,9 @@ import ProductsData from "../ProductInfo&Data/ProductsData";
 import HeadNavBar from "../../HEADER/HeadNavBar";
 import Footer from "../../FOOTER/Footer";
 import MapDetails from "../../ContactUs/MapDetails";
+import { AllFeatureData } from "../ProductInfo&Data/AllFeatureData";
+import { AllDescriptionData } from "../ProductInfo&Data/AllDescriptionData";
+import { AllImagesData } from "../ProductInfo&Data/AllImagesData";
 
 const Dual = () => {
 
@@ -21,8 +22,8 @@ const Dual = () => {
 
   return (
     <>
-    <HeadNavBar />
-      <TitleData Title="Dual Moniter Console" />
+      <HeadNavBar />
+      <TitleData Title="Dual Monitor Console" />
       <ProductsData
         data={[
           {
@@ -50,10 +51,10 @@ const Dual = () => {
       />
       <ProductsInfo
         id="dual1"
-        mainTitle="Dual Moniter Console "
-        head="Dual Moniter Console"
-        img={ProductsAllText.img_DMC1}
-        texts={ProductsAllText.texts_DMC1}
+        mainTitle="Dual Monitor  "
+        head="Dual Monitor Description"
+        sliderImages={AllImagesData.sliderImagesDual_one}
+        texts={AllDescriptionData.texts_DMC1}
       />
       <DisplayData
         PDD1="MIL STD 704F "
@@ -63,23 +64,23 @@ const Dual = () => {
         PTD2="Complied"
         PTD3="Complied"
       />
-      <ProductFeature features={ProductsAllData.featureList_DMC1} />
+      <ProductFeature features={AllFeatureData.featureList_DMC1} />
       <ProductsInfo
         id="dual2"
-        mainTitle="Dual Moniter Console"
-        head="Dual Moniter Console"
-        img={ProductsAllText.img_DMC2}
-        texts={ProductsAllText.texts_DMC2}
+        mainTitle="Dual Monitor "
+        head="Dual Monitor  Description"
+        sliderImages={AllImagesData.sliderImagesDual_two}
+        texts={AllDescriptionData.texts_DMC2}
       />
-      <ProductFeature features={ProductsAllData.featureList_DMC2} />
+      <ProductFeature features={AllFeatureData.featureList_DMC2} />
       <ProductsInfo
         id="dual3"
-        mainTitle="Dual Moniter Console"
-        head="Dual Moniter Console"
-        img={ProductsAllText.img_DMC3}
-        texts={ProductsAllText.texts_DMC3}
+        mainTitle="Dual Monitor Console"
+        head="Dual Monitor Description"
+        sliderImages={AllImagesData.sliderImagesDual_three}
+        texts={AllDescriptionData.texts_DMC3}
       />
-      <ProductFeature features={ProductsAllData.featureList_DMC3} />
+      <ProductFeature features={AllFeatureData.featureList_DMC3} />
 
       <ContactDetail />
       <ContactMap />
