@@ -6,7 +6,7 @@ import WhyRugRel from './WhyChoose/WhyRugRel';
 import IndustrialSolutions from './IndSol/IndustrialSolutions ';
 import EnquiryForm from './Enquiry/EnquiryForm';
 import UpcomingEvents from './Upcoming/UpcomingEvents';
-// import Carouselslider from './Slick_Slider/Carouselslider';
+import Carouselslider from './Slick_Slider/Carouselslider';
 import Footer from '../FOOTER/Footer';
 import HeadNavBar from '../HEADER/HeadNavBar';
 import HomeCarousel from './Carousel/HomeCarousel';
@@ -18,7 +18,7 @@ const LandingPage = () => {
     <>
         <HeadNavBar />
         <HomeCarousel />
-        {/* <Carouselslider /> */}
+        <Carouselslider />
         <Custom />
         <Service />
         <WhyRugRel />

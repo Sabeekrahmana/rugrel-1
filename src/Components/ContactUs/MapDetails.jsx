@@ -26,10 +26,11 @@ const MapDetails = () => {
                   <strong>BANGALORE</strong>
                 </Accordion.Header>
                 <Accordion.Body>
-                  India :-  <br />
+                <b>India :- </b>  <br />
                   Rug-Rel Components & Systems Pvt Ltd No. 307, 7th Block,
                   Nagarbhavi 2nd Stage, Bangalore – 560072, Karnataka, <br />
-                  India Contact: +91 7369070074, +91 9487257906 email:
+                  <b>India Contact : </b> +91 7369070074, +91 9487257906  <br /> 
+                  <b>Email : </b>
                   faiz.rahman@rugrel.com
                 </Accordion.Body>
               </Accordion.Item>
@@ -50,10 +51,11 @@ const MapDetails = () => {
                   <strong>UK</strong>
                 </Accordion.Header>
                 <Accordion.Body >
-                  UK :-  <br /> 
+                <b>UK :- </b>  <br /> 
                    Rug-Rel Components & Systems Ltd 200 Brook Drive, Green
-                  Park Reading, RG2 6UB, United Kingdom Contact: +44 7914 935648
-                  email: sales.uk@rugrel.com
+                  Park Reading, RG2 6UB, United Kingdom
+                  <br /> <b> Contact : </b> +44 7914 935648 <br />
+                  <b> Email : </b> sales.uk@rugrel.com
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
@@ -73,11 +75,12 @@ const MapDetails = () => {
                   <strong>UAE</strong>
                 </Accordion.Header>
                 <Accordion.Body>
-                  UAE :-  <br />
+                <b>UAE :- </b>  <br />
                   Rug-Rel Components & Systems LLC 957, 9th Floor, Burjuman
                   Business Tower, Sheikh Khalifa Bin Zayed Street, Al Mankhool,
                   Dubai, <br />
-                  U.A.E Contact: +971 523465187 email: sales.uae@rugrel.com
+                  <b>U.A.E Contact : </b> +971 523465187  <br /> 
+                  <b>Email : </b> sales.uae@rugrel.com
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>

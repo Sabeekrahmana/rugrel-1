@@ -245,3 +245,8 @@ a {
     color: #e271e2 !important;
   }
 }
+
+.footer .active {
+  font-weight: bold;
+  color: #e271e2; /* Set the desired color for active links */
+}

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "react-bootstrap";
 import { MdPlayArrow } from "react-icons/md";
 
 const WhyRuqFaq = () => {
   const [activeItem, setActiveItem] = useState("CUSTOMER DRIVEN CULTURE");
+
+  useEffect(() => window.scroll(0, 0), []);
 
   const faqItems = [
     {

@@ -3,11 +3,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Card, Container } from "react-bootstrap";
 import Slider from "react-slick";
-import serviceImg1 from "../../../Assets/images/FPGA.webp";
-import serviceImg2 from "../../../Assets/images/FPGA.webp";
-import serviceImg3 from "../../../Assets/images/FPGA.webp";
-import serviceImg4 from "../../../Assets/images/FPGA.webp";
-import serviceImg5 from "../../../Assets/images/FPGA.webp";
+import serviceImg1 from "../../../Assets/images/Img-Mech-dsn/des.jpg";
+import serviceImg2 from "../../../Assets/images/Img-Mech-dsn/proto.jpg";
+import serviceImg3 from "../../../Assets/images/Img-Mech-dsn/pcb (1).jpeg";
+import serviceImg4 from "../../../Assets/images/Img-Mech-dsn/Cable Assemly/cable_Asseble-wire.jpeg";
+import serviceImg5 from "../../../Assets/images/Img-Mech-dsn/Cable Assemly/system-integration.jpg";
 import "./service.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,28 +16,28 @@ const Service = () => {
   const servicesData = [
     {
       image: serviceImg1,
-      serviceName: "Design",
-      serviceDescription: "Description for service one.",
+      serviceName: "Design Services",
+      serviceDescription: "At Rug-Rel Components & Systems Pvt. Ltd., we specialize in providing high-quality, defense-grade electronic systems and solutions. Our services are meticulously designed to meet the rigorous demands of defense, aerospace, industrial, and other high-reliability sectors. With cutting-edge technology and ISO-certified facilities, we deliver tailored solutions across multiple verticals.",
     },
     {
       image: serviceImg2,
       serviceName: "Manufacturing",
-      serviceDescription: "Description for service two.",
+      serviceDescription: "Manufacture engineering services are critical in ensuring that mechanical systems are efficient, reliable, and sustainable. Our team offers comprehensive services in modeling, thermal analysis, and structural analysis.",
     },
     {
       image: serviceImg3,
       serviceName: "PCB Assembly Three",
-      serviceDescription: "Description for service three.",
+      serviceDescription: "At Rug-Rel, we provide end-to-end PCB assembly services, including surface-mount technology (SMT) and through-hole technology (THT). Our advanced assembly processes ensure that PCBs are built to precise specifications, with rigorous quality control at each step to ensure reliability. We specialize in defense-grade PCB assembly, focusing on high-frequency, RF, and multi-layer boards that meet strict military standards. Our ESD-protected facilities guarantee the highest levels of safety and performance in every assembly.",
     },
     {
       image: serviceImg4,
       serviceName: "Cable assembly and wire harness",
-      serviceDescription: "Description for service four.",
+      serviceDescription: "At Rug-Rel, we provide custom cable assembly services designed to meet the stringent requirements of defense and aerospace industries. Our cables are engineered to endure extreme conditions, including high temperatures, mechanical stress, and exposure to harsh environments. Our assemblies comply with military-grade standards, ensuring long-term durability and optimal performance.",
     },
     {
       image: serviceImg5,
       serviceName: "System Integration",
-      serviceDescription: "Description for service five.",
+      serviceDescription: "Our system integration services involve the seamless integration of mechanical and electronic subsystems into fully operational defense systems. We provide end-to-end integration, including hardware, software, and firmware, ensuring that all components work together efficiently. We also offer testing and validation services to ensure the systems meet all necessary defense and aerospace standards.",
     },
   ];
 

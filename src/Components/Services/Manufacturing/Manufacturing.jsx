@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import ban1 from "../../../Assets/images/ServicesImg/ban1.jpg"; 
-import ser3 from "../../../Assets/images/ServicesImg/ser3.jpg"; 
-import manBan from "../../../Assets/images/ServicesImg/manufacture.jpg"; 
+import manBan from "../../../Assets/images/ServicesImg/ser8.jpg"; 
 import "../ServicePages.css";
 import ServiceBanner from "../ServiceBanners/ServiceBanner";
 import SecondBanner from "../../AboutUs/BannerPage/SecondBanner";
 import { IoMdCheckboxOutline } from "react-icons/io";
 import HeadNavBar from "../../HEADER/HeadNavBar";
 import Footer from "../../FOOTER/Footer";
+import proto from "../../../Assets/images/Img-Mech-dsn/proto.jpg";
+import mass from "../../../Assets/images/Img-Mech-dsn/mass.jpg";
+
 
 
 const Manufacturig = () => {
@@ -37,33 +39,25 @@ const Manufacturig = () => {
 
   const sectionsData = [
     {
-      id: "Manufacture",
-      heading: "Manufacture Services",
+      id: "prototype",
+      heading: "2.1 Prototype Manufacturing",
       content:
-        "Manufacture services encompass a wide range of engineering disciplines that ensure the reliability and functionality of mechanical systems in various industries. From initial design to final implementation, mechanical engineering plays a crucial role in the development of efficient and sustainable solutions.",
-      imgSrc: ser3, 
+        "Rug-Rel offers rapid prototype manufacturing services, ensuring that initial designs meet all operational and environmental criteria. Our in-house team uses state-of-the-art manufacturing techniques to produce prototypes that adhere to defense and aerospace standards. Prototyping includes PCB assembly, cable harnessing, and mechanical components, enabling you to test and validate your designs in real-world conditions before committing to large-scale production.",
+      imgSrc: proto, 
     },
     {
-      id: "modeling",
-      heading: "Modeling",
+      id: "mass-volume",
+      heading: "2.2 Mass & Volume Production",
       content:
-        "Our modeling services provide detailed simulations of mechanical systems, enabling precise predictions of behavior under various conditions. This service is essential for the development of robust designs.",
-      imgSrc: ser3, 
-    },
-    {
-      id: "thermal-analysis",
-      heading: "Thermal Analysis",
-      content:
-        "Thermal analysis services ensure that systems operate within safe temperature ranges. We analyze heat distribution and transfer to prevent overheating and optimize performance.",
-      imgSrc: ser3, 
-    },
-    {
-      id: "structural-analysis",
-      heading: "Structural Analysis",
-      content:
-        "Our structural analysis services evaluate the strength and durability of mechanical components. This analysis is critical in designing systems that can withstand various loads and stresses.",
-      imgSrc: ser3, 
-    },
+        "Our mass production services are designed to meet large-scale production demands while maintaining the highest quality standards. With advanced CNC machinery, laser cutting, and PCB assembly capabilities, Rug-Rel can handle the production of complex, high-precision electronic systems for defense and industrial applications. We ensure that every product meets ISO 9001 standards, and our scalable production processes allow us to handle both small batches and large orders efficiently.",
+      imgSrc: mass, 
+    }
+  ];
+
+  const relatedProductsData = [
+    { imgSrc: proto, title: "Product 1" },
+    { imgSrc: proto, title: "Product 2" },
+    { imgSrc: proto, title: "Product 3" },
   ];
 
   return (
@@ -74,7 +68,7 @@ const Manufacturig = () => {
         heading="MANUFACTURE SERVICES"
       />
       <Container style={{ padding: "30px 60px" }} className="my-4">
-        <h2 className="fw-bold my-4">MANUFACTURE Services</h2>
+        <h2 className="fw-bold my-4">2. Manufacturing Services</h2>
         <p className="fs-5">
           Manufacture engineering services are critical in ensuring that mechanical systems are efficient, reliable, and sustainable. Our team offers comprehensive services in modeling, thermal analysis, and structural analysis.
         </p>
@@ -106,12 +100,12 @@ const Manufacturig = () => {
                 <h2 className="fw-bold mb-3" style={{ textTransform: "uppercase" }}>
                   {section.heading}
                 </h2>
-                <p className="fs-5" style={{ textAlign: "justify" }}>
+                <p className="fs-10" style={{ textAlign: "justify" }}>
                   {section.content}
                 </p>
               </Col>
               <Col md={6}>
-                <img src={section.imgSrc} alt={section.heading} className="img-fluid" />
+                <img src={section.imgSrc} alt={section.heading} className="img-fluid my-5 single-image-size " />
               </Col>
             </Row>
 
@@ -122,14 +116,22 @@ const Manufacturig = () => {
                 {activeSection === index ? "Read Less" : "Read More"}
               </Button>
             </div>
-
-            {/* Display details directly after clicking Read More */}
-            {activeSection === index && (
+ {/* Display Related Products directly after clicking Read More */}
+ {activeSection === index && (
               <div className="my-4">
-                <h4>{section.heading} - Details</h4>
-                <p>
-                  More detailed content about {section.heading} can be included here to provide deeper insights into the services offered.
-                </p>
+                <h4>Related Products</h4>
+                <Row>
+                  {relatedProductsData.map((product, idx) => (
+                    <Col md={4} key={idx} className="text-center my-3">
+                      <img
+                        src={product.imgSrc}
+                        alt={product.title}
+                        className="img-fluid mb-2"
+                      />
+                      <h5>{product.title}</h5>
+                    </Col>
+                  ))}
+                </Row>
               </div>
             )}
           </div>

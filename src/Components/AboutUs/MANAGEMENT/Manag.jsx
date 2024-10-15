@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Card } from "react-bootstrap";
 import '../AboutUs.css'
 
@@ -40,6 +40,9 @@ const cardData = [
 ];
 
 const Manag = () => {
+
+  useEffect(() => window.scroll(0, 0), []);
+
   return (
     <>
       <div className="">

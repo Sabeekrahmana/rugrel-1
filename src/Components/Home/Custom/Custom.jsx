@@ -2,6 +2,7 @@ import React from "react";
 import "./Custom.css";
 import Container from "react-bootstrap/Container";
 import conImg from "../../../Assets/images/CustomImg/customImg.png";
+import RugButton from "../../Button/RugButton";
 
 
 const Custom = () => {
@@ -18,9 +19,11 @@ const Custom = () => {
           </p>
           <div className="classbtn pt-4 mt-5 ">
             <span>We’re ready to collaborate whenever you are. </span>
-            <button className="btn-con" href="#">
+            {/* <button className="btn-con" href="#">
               Let's Talk!
-            </button>
+            </button> */}
+            <RugButton label="Let's Talk!" href="#small" size="small" className="ms-0" />
+
           </div>
         </div>
         {/* second */}

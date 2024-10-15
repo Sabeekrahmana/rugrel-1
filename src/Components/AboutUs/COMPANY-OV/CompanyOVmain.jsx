@@ -1,13 +1,16 @@
 import SecondBanner from '../BannerPage/SecondBanner';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { MdPlayArrow } from "react-icons/md";
 import { BiSolidDownArrow } from "react-icons/bi";
-import FirstBanner from '../BannerPage/FirstBanner';
+// import FirstBanner from '../BannerPage/FirstBanner';
 
 const CompanyOVmain = () => {
   const [activeItem, setActiveItem] = useState('COMPANY OVERVIEW');
   const [activeSubItem, setActiveSubItem] = useState('');
+
+  useEffect(() => window.scroll(0, 0), []);
+
 
   const faqItems = [
     {

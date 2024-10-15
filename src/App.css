@@ -12,189 +12,30 @@ html {
   scroll-behavior: smooth;
 }
 
-
-/* -------------------------------------------------------- */
-
-
-.navBg {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  position: sticky !important;
-  width: 100%;
-  top: 0;
-  background: #eaeeff;
-  letter-spacing: 0.0625rem;
-  font-family: "Avenir LT W01_85 Heavy1475544";
-  font-size: 14px;
-  z-index: 1000;
-  transition: background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-  padding: 10px;
-}
-
-.navItem {
-  position: relative;
-  color: #fff;
-
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    padding: 14px 0;
-    margin: 0;
-    width: max-content;
-    transition: all 0.3s ease;
-    border-radius: 0 !important;
-    border: none;
-    z-index: 1;
-    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.27);
-
-    .dropdown-item:hover {
-      background-color: purple !important;
-      color: #ffffff !important;
-      font-weight: 600 !important;
-      transition: 0.6s;
-    }
-  }
-
-  &:hover .dropdown-menu,
-  &:focus .dropdown-menu,
-  &:active .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  .dropend {
-    color: white !important;
-  }
-
-  .submenu {
-    padding-left: 8px;
-    font-weight: 500;
-    color: white !important;
-
-    &:hover {
-      color: #fff !important;
-      font-weight: 600 !important;
-      transition: 0.6s;
-    }
-
-    .dropdown-menu {
-      left: 100%;
-      top: 0;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateX(-10px);
-      transition: all 0.3s ease;
-    }
-
-    &:hover > .dropdown-menu,
-    &:focus > .dropdown-menu,
-    &:active > .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(0);
-    }
-  }
-
-  .dropdown-toggle:hover {
-    color: white !important;
-    background-color: purple !important;
-  }
-}
-
-.navItem .dropdown-toggle > svg {
-  display: none;
-
-}
-
-.submenu .dropdown-toggle > svg {
-  display: none;
-}
-
-.dropdown-toggle::after {
-  content: none;
-}
-
-.navItem .dropdown-item {
-  font-weight: 400;
-  color: #000;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.rightArr {
-  font-weight: 900 !important;
-}
-
-.navbar-nav .nav-item:hover .dropdown-menu {
-  display: block;
-  margin-top: 0; 
-}
-
-
-/* -------------------------------------------------------- */
-/* -------------------------------------------------------- */
-
-.purple-button {
-  background-color: purple !important;
-  border-color: purple !important;
-  color: #ffffff !important;
-  transition: 0.5s all ease-in-out !important;
-
-
-  &:hover {
-    background-color: whitesmoke !important;
-    color: purple !important;
-    border-color: purple !important;
-  }
-}
-
-.purple-button,
-.purple-button:focus,
-.purple-button:active {
-  background-color: purple;
-  color: white;
-  border-color: purple;
-}
-
-@media(min-width: 768px) and (max-width: 992px){
-  .purple-button{
-    font-size: 10px !important;
-  }
-  .navbar .container{
-    padding-left: 0;
-  }
-}
-
 /* -------------------------------------------------------- */
 
 ::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
-  background-color: purple; /* Background color of the scrollbar */
+  width: 12px;
+  background-color: purple;
 }
 ::-webkit-scrollbar-track {
-  background-color: #d7cfcf; /* Track color */
+  background-color: #d7cfcf; 
 }
 
 /* Scrollbar handle */
 ::-webkit-scrollbar-thumb {
-  background-color: #d757d7; /* Handle color */
-  border-radius: 6px; /* Optional: Round the handle */
+  background-color: #a70aa7; 
+  border-radius: 0px; 
 }
 
-.imglogo {
-  width: 100% !important;
-  max-width: 150px !important;
-}
 .carouselimg {
   width: 100% !important;
-  height: 500px !important;
+  height:480px !important;
 }
 
 .card-img-custom {
   width: 100%;
-  height: 200px; /* Set your desired height */
+  height: 200px;
   object-fit: cover;
 }
 
@@ -221,4 +62,20 @@ html {
   outline: none;
   box-shadow: none !important;
   border: 1px solid rebeccapurple !important;
+}
+
+/* // Active */
+
+.activeNav {
+  background-color: purple !important; 
+  color: white !important;
+}
+
+.activeDropdown {
+  background-color: purple; 
+  color: white;
+}
+
+.navItem {
+  cursor: pointer;
 }
