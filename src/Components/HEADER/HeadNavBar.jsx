@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Header.css"
+import "./Header.css";
 import {
   Navbar,
   Nav,
@@ -65,8 +65,8 @@ const HeadNavBar = () => {
 
   return (
     <>
-      <Navbar expand="md" className="navBg">
-        <Container>
+        <Navbar expand="md" className="navBg">
+          <Container>
           <img
             src={logoimg}
             className="imglogo"
@@ -100,45 +100,50 @@ const HeadNavBar = () => {
                   onMouseOut={handleMouseOut}
                   show={showDropdown}
                 >
-                  <NavDropdown.Item  className={pathname === "/whyfaq" ? "activeNav" : ""} 
-                  onClick={(e) => handleDropdownNavigate("/whyfaq", e)}
-                >
+                  <NavDropdown.Item
+                    className={pathname === "/whyfaq" ? "activeNav" : ""}
+                    onClick={(e) => handleDropdownNavigate("/whyfaq", e)}
+                  >
                     Why Rug-Rel?
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
-                  className={pathname === "/companyoverview" ? "activeNav" : ""}
-                  onClick={(e) => handleDropdownNavigate("/companyoverview", e)}
-                   >
+                  <NavDropdown.Item
+                    className={
+                      pathname === "/companyoverview" ? "activeNav" : ""
+                    }
+                    onClick={(e) =>
+                      handleDropdownNavigate("/companyoverview", e)
+                    }
+                  >
                     Company Overview
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
-                 className={pathname === "/news-events" ? "activeNav" : ""}
-                 onClick={(e) => handleDropdownNavigate("/news-events", e)}
-                 >
+                  <NavDropdown.Item
+                    className={pathname === "/news-events" ? "activeNav" : ""}
+                    onClick={(e) => handleDropdownNavigate("/news-events", e)}
+                  >
                     News & Events
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
-                  className={pathname === "/management" ? "activeNav" : ""}
-                  onClick={(e) => handleDropdownNavigate("/management", e)}
-                     >
+                  <NavDropdown.Item
+                    className={pathname === "/management" ? "activeNav" : ""}
+                    onClick={(e) => handleDropdownNavigate("/management", e)}
+                  >
                     Management Team
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
-                   className={pathname === "/engineering" ? "activeNav" : ""}
-                   onClick={(e) => handleDropdownNavigate("/engineering", e)}
-                   >
+                  <NavDropdown.Item
+                    className={pathname === "/engineering" ? "activeNav" : ""}
+                    onClick={(e) => handleDropdownNavigate("/engineering", e)}
+                  >
                     Engineering Excellence
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
-                   className={pathname === "/manufacturing" ? "activeNav" : ""}
-                   onClick={(e) => handleDropdownNavigate("/manufacturing", e)}
-                   >
+                  <NavDropdown.Item
+                    className={pathname === "/manufacturing" ? "activeNav" : ""}
+                    onClick={(e) => handleDropdownNavigate("/manufacturing", e)}
+                  >
                     Manufacturing Process
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
-                   className={pathname === "/qualitystd" ? "activeNav" : ""}
-                   onClick={(e) => handleDropdownNavigate("/qualitystd", e)}
-                   >
+                  <NavDropdown.Item
+                    className={pathname === "/qualitystd" ? "activeNav" : ""}
+                    onClick={(e) => handleDropdownNavigate("/qualitystd", e)}
+                  >
                     Quality Standards
                   </NavDropdown.Item>
                 </NavDropdown>
@@ -157,6 +162,7 @@ const HeadNavBar = () => {
                   show={showDropdown}
                 >
                   <NavDropdown
+                    // className="navcolor"
                     title={
                       <>
                         Power Supply Unit <FaCaretRight />
@@ -171,10 +177,12 @@ const HeadNavBar = () => {
                     onMouseOut={handleSubMenuMouseOut}
                     show={showSubMenu}
                   >
-                    <NavDropdown.Item 
-                     className={
-                      pathname === "/power-supply-unit/standard" ? "activeNav" : ""
-                    }
+                    <NavDropdown.Item
+                      className={
+                        pathname === "/power-supply-unit/standard"
+                          ? "activeNav"
+                          : ""
+                      }
                       onClick={(e) =>
                         handleDropdownNavigate("/power-supply-unit", e)
                       }
@@ -182,14 +190,15 @@ const HeadNavBar = () => {
                       Standard
                     </NavDropdown.Item>
                     <NavDropdown.Item
-                     className={pathname === "/customPSU" ? "activeNav" : ""}
+                      className={pathname === "/customPSU" ? "activeNav" : ""}
                       onClick={(e) => handleDropdownNavigate("/customPSU", e)}
                     >
                       Customised
                     </NavDropdown.Item>
                   </NavDropdown>
                   <NavDropdown.Item
-                   className={pathname === "/backplane" ? "activeNav" : ""}
+                    // className=""
+                    className={pathname === "/backplane" ? "activeNav" : ""}
                     onClick={(e) => handleDropdownNavigate("/backplane", e)}
                   >
                     BackPlane
@@ -202,7 +211,6 @@ const HeadNavBar = () => {
                     }
                     drop="end"
                     className="submenu"
-                    
                     onClick={(e) =>
                       handleDropdownNavigate("/rug-display-solutions", e)
                     }
@@ -342,14 +350,20 @@ const HeadNavBar = () => {
                     >
                       <NavDropdown.Item
                         onClick={() =>
-                          handleLinkClick("/designservices/mechanical/modeling", "modeling")
+                          handleLinkClick(
+                            "/designservices/mechanical/modeling",
+                            "modeling"
+                          )
                         }
                       >
                         Modeling
                       </NavDropdown.Item>
                       <NavDropdown.Item
                         onClick={() =>
-                          handleLinkClick("/designservices/mechanical", "thermal-analysis")
+                          handleLinkClick(
+                            "/designservices/mechanical",
+                            "thermal-analysis"
+                          )
                         }
                       >
                         Thermal Analysis

@@ -12,10 +12,8 @@ import {
 } from "react-icons/fa";
 
 const NewsEventsMain = () => {
-
   useEffect(() => window.scroll(0, 0), []);
 
-  
   // Array of card data
   const cardData = [
     {
@@ -163,10 +161,20 @@ const NewsEventsMain = () => {
   ];
 
   // Pagination state
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const itemsPerPage = 3;
   const [currentPage, setCurrentPage] = useState(1);
+  const [visiblePages, setVisiblePages] = useState(7); // Initial number of visible pages
   const itemsPerPage = 3;
 
   // Calculate indices for slicing the cardData2 array
+
+  // const indexOfLastItem = currentPage * itemsPerPage;
+  // const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  // const currentItems = cardData2.slice(indexOfFirstItem, indexOfLastItem);
+
+  // const totalPages = Math.ceil(cardData2.length / itemsPerPage);
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = cardData2.slice(indexOfFirstItem, indexOfLastItem);
@@ -174,22 +182,60 @@ const NewsEventsMain = () => {
   const totalPages = Math.ceil(cardData2.length / itemsPerPage);
 
   // Handle page change
+  // const handlePageChange = (pageNumber) => {
+  //   setCurrentPage(pageNumber);
+  // };
+
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+  // Responsive pagination setup
+  useEffect(() => {
+    const updatePagination = () => {
+      if (window.innerWidth <= 459) {
+        setVisiblePages(2); // Display 2 pagination buttons on mobile screens
+      } else if (window.innerWidth > 459 && window.innerWidth < 768) {
+        setVisiblePages(3); // Display 3 pagination buttons on small tablets
+      } else {
+        setVisiblePages(7); // Display 7 pagination buttons on larger screens
+      }
+    };
+
+    // Initial check
+    updatePagination();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", updatePagination);
+
+    // Cleanup the event listener on component unmount
+    return () => window.removeEventListener("resize", updatePagination);
+  }, []);
+
+  // Calculate visible pagination items
+  const startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
+  const endPage = Math.min(totalPages, startPage + visiblePages - 1);
+
   return (
     <>
-    <div className="eventsImg">
-      <div className="eventsHead">NEWS AND EVENTS</div>
-    </div>
+      <div className="eventsImg">
+        <div className="eventsHead">NEWS AND EVENTS</div>
+      </div>
       <Container>
-        <Row>
+        <Row className="DownLine">
           <h1 className="mt-5 upComing">Upcoming Events</h1>
         </Row>
         <Row>
           {cardData.map((card) => (
-            <Col key={card.id} md={4} className="mb-5">
-              <Card style={{ width: "20rem", border: "none" }}>
+            <Col
+              key={card.id}
+              lg={4}
+              md={6}
+              sm={10}
+              xs={12}
+              className="mb-5  d-flex  justify-content-center align-items-center"
+            >
+              <Card style={{ width: "25rem", border: "none" }}>
                 <Card.Img variant="top" src={card.imgSrc} />
                 <Card.Body className="cardBody">
                   <Card.Title>{card.title}</Card.Title>
@@ -200,21 +246,28 @@ const NewsEventsMain = () => {
             </Col>
           ))}
         </Row>
-        <Row>
+        <Row className="DownLine">
           <h1 className="mt-5 upComing">Latest News</h1>
         </Row>
         <Row>
           {currentItems.map((card) => (
-            <Col key={card.id} md={4} className="mb-5 d-flex">
+            <Col
+              key={card.id}
+              lg={4}
+              md={6}
+              sm={10}
+              xs={12}
+              className="mb-5  d-flex  justify-content-center align-items-center "
+            >
               <Card
-                style={{ width: "22rem", border: "none", textAlign: "justify" }}
+                style={{ width: "25rem", border: "none", textAlign: "justify" }}
               >
                 <Card.Img
                   variant="top"
                   style={{ borderRadius: "0px" }}
                   src={card.imgSrc}
                 />
-                <Card.Body className="cardBody">
+                <Card.Body className="cardBody d-flex justify-content-between e">
                   <Card.Text className="CardDate">
                     <small>{card.date}</small>
                   </Card.Text>
@@ -228,7 +281,7 @@ const NewsEventsMain = () => {
 
         {/* -----------------PAGINATION----------------- */}
 
-        <Pagination className="justify-content-center">
+        {/* <Pagination className=" d-flex justify-content-center align-items-center">
           <Pagination.First
             onClick={() => handlePageChange(1)}
             disabled={currentPage === 1}
@@ -262,6 +315,44 @@ const NewsEventsMain = () => {
             disabled={currentPage === totalPages}
           >
             {" "}
+            <FaAngleDoubleRight />
+          </Pagination.Last>
+        </Pagination> */}
+
+        <Pagination className="d-flex justify-content-center align-items-center">
+          <Pagination.First
+            onClick={() => handlePageChange(1)}
+            disabled={currentPage === 1}
+          >
+            <FaAngleDoubleLeft />
+          </Pagination.First>
+          <Pagination.Prev
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            <FaAngleLeft /> Previous
+          </Pagination.Prev>
+
+          {[...Array(endPage - startPage + 1).keys()].map((number) => (
+            <Pagination.Item
+              key={startPage + number}
+              active={startPage + number === currentPage}
+              onClick={() => handlePageChange(startPage + number)}
+            >
+              {startPage + number}
+            </Pagination.Item>
+          ))}
+
+          <Pagination.Next
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            Next <FaAngleRight />
+          </Pagination.Next>
+          <Pagination.Last
+            onClick={() => handlePageChange(totalPages)}
+            disabled={currentPage === totalPages}
+          >
             <FaAngleDoubleRight />
           </Pagination.Last>
         </Pagination>

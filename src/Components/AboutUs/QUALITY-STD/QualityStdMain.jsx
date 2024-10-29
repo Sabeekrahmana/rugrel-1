@@ -13,7 +13,7 @@ const QualityStdMain = () => {
     </div>
     <Container>
         <div className="qualityContainer mt-5 w-80">
-        <h1 className='fw-bold'>Our Commitment to Quality at Rug-Rel Components & Systems Pvt. Ltd.</h1>
+        <h1 className='fw-bold OurCommitment  '>Our Commitment to Quality at Rug-Rel Components & Systems Pvt. Ltd.</h1>
         <br />
         <p>At Rug-Rel Components & Systems Pvt. Ltd., quality is ingrained in every aspect of our operations. We prioritize excellence by continually refining our quality management system to meet the stringent demands of the defence and aerospace industries. Our products are meticulously engineered and manufactured to exceed industry standards, ensuring robustness and reliability in every component.</p>
         <br />

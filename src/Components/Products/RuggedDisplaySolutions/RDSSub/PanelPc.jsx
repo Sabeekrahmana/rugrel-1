@@ -27,21 +27,21 @@ const PanelPc = () => {
         data={[
           {
             label: PD_Data.PPC_value1[0],
-            link: "/rug-display-solutions",
+            link: "#PPC1",
             sm: 12,
             md: 6,
             lg: 4,
           },
           {
             label: PD_Data.PPC_value2[0],
-            link: "/rug-monitor",
+            link: "#PPC2",
             sm: 12,
             md: 6,
             lg: 4,
           },
           {
             label: PD_Data.PPC_value3[0],
-            link: "#PPC2",
+            link: "#PPC3",
             sm: 12,
             md: 6,
             lg: 4,
@@ -75,7 +75,7 @@ const PanelPc = () => {
       />
       <ProductFeature features={AllFeatureData.featureList_PPC2} />
       <ProductsInfo
-        id="PPC2"
+        id="PPC3"
         mainTitle="15 INDUSTRIAL PANEL PC"
         head="15 INDUSTRIAL PANEL PC Description"
         sliderImages={AllImagesData.sliderImagesPPC_three}

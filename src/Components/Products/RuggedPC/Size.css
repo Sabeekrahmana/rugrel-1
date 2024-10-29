@@ -1,9 +1,9 @@
 
-.squarSize {
+/* .squarSize {
 height: 40px !important;
 border: 2px solid purple !important;
 border-radius: 4px !important;
-}
+} */
 .sizeBtn{
     color: black;
     font-weight: 700;
@@ -29,3 +29,16 @@ cursor: pointer;
     font-size: 13px ;
     font-weight: 500;
 }
+
+@media (max-width:768px) {
+   .ListGroup{
+height: 34px !important;
+border: 1px solid purple !important;
+color: black;
+font-size: 12px !important;
+font-weight: 600;
+padding: 5px;
+margin: 2px !important;
+} 
+}
+

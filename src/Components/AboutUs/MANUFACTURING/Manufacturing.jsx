@@ -14,7 +14,7 @@ const Manufacturing = () => {
           <h1 className="fw-bold  h11">MANUFACTURING PROCESS</h1>
         </div>
         <Container className=" mt-5">
-          <h2 className="mb-5 w-80 fw-bold">
+          <h2 className="mb-5 w-80 fw-bold OurCommitment">
             Precision Manufacturing and Quality Control for Defence at Rug-Rel
             Components & Systems Pvt. Ltd.
           </h2>
@@ -28,7 +28,7 @@ const Manufacturing = () => {
               alignment with client specifications or through innovative R&D
               initiatives.
             </p>
-<br />
+            <br />
             <p>
               Material sourcing adheres strictly to industry standards such as
               MIL-STD and AS9100, guaranteeing superior quality and reliability.
@@ -47,7 +47,7 @@ const Manufacturing = () => {
               Management System (QMS) compliant with ISO 9001 or AS9100,
               ensuring consistent performance and client satisfaction.
             </p>
-<br />
+            <br />
             <p>
               Discover how Rug-Rel Components & Systems Pvt. Ltd. sets the
               standard for precision manufacturing and reliability in the
