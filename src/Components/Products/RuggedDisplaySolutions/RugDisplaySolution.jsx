@@ -34,7 +34,7 @@ const RugDisplaySolution = () => {
           },
           {
             label: PD_Data.RDS_value2[0],
-            link: "/rug-monitor",
+            link: "/rugmonitor",
             sm: 12,
             md: 6,
             lg: 4,

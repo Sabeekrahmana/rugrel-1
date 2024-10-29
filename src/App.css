@@ -9,7 +9,7 @@ body {
 /* ------------------------------------------------------- */
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth ;
 }
 
 /* -------------------------------------------------------- */
@@ -79,3 +79,9 @@ html {
 .navItem {
   cursor: pointer;
 }
+
+ /* EnquiryForm */
+
+ .formLabel{
+  color: black !important;
+ }

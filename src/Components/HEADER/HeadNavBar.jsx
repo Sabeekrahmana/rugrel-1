@@ -16,9 +16,10 @@ import RugButton from "../Button/RugButton";
 const HeadNavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { pathname } = location;
+  const { pathname } = location; // Get current path
 
-  const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [showSubMenu, setShowSubMenu] = useState(false);
 
   const handleClick = () => {
     navigate("/");
@@ -29,8 +30,10 @@ const HeadNavBar = () => {
     navigate(path);
   };
 
-  const handleMouseOver = (dropdownName) => setOpenDropdown(dropdownName);
-  const handleMouseOut = () => setOpenDropdown(null);
+  const handleMouseOver = () => setShowDropdown(true);
+  const handleMouseOut = () => setShowDropdown(false);
+  const handleSubMenuMouseOver = () => setShowSubMenu(true);
+  const handleSubMenuMouseOut = () => setShowSubMenu(false);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -62,8 +65,8 @@ const HeadNavBar = () => {
 
   return (
     <>
-      <Navbar expand="md" className="navBg">
-        <Container>
+        <Navbar expand="md" className="navBg">
+          <Container>
           <img
             src={logoimg}
             className="imglogo"
@@ -72,17 +75,17 @@ const HeadNavBar = () => {
             style={{ cursor: "pointer" }}
           />
           <Navbar.Toggle
-            aria-controls={`offcanvasNavbar-expand-md`}
+            aria-controls={offcanvasNavbar-expand-md}
             className="custom-toggle"
           />
           <Navbar.Offcanvas
-            id={`offcanvasNavbar-expand-md`}
-            aria-labelledby={`offcanvasNavbarLabel-expand-md`}
+            id={offcanvasNavbar-expand-md}
+            aria-labelledby={offcanvasNavbarLabel-expand-md}
             placement="end"
           >
             <Offcanvas.Header closeButton></Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-end gap-4 flex-grow-1 navItems">
+              <Nav className="justify-content-center gap-4 flex-grow-1 navItems">
                 {/* About Us */}
                 <NavDropdown
                   className={`fw-bold navItem ${
@@ -93,54 +96,60 @@ const HeadNavBar = () => {
                       About Us <FaCaretDown />
                     </>
                   }
-                  onMouseOver={() => handleMouseOver('aboutUs')}
+                  onMouseOver={handleMouseOver}
                   onMouseOut={handleMouseOut}
-                  show={openDropdown === 'aboutUs'}
+                  show={showDropdown}
                 >
-                  <NavDropdown.Item className={pathname === "/whyfaq" ? "activeNav" : ""} 
+                  <NavDropdown.Item
+                    className={pathname === "/whyfaq" ? "activeNav" : ""}
                     onClick={(e) => handleDropdownNavigate("/whyfaq", e)}
                   >
                     Why Rug-Rel?
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
-                    className={pathname === "/companyoverview" ? "activeNav" : ""}
-                    onClick={(e) => handleDropdownNavigate("/companyoverview", e)}
+                  <NavDropdown.Item
+                    className={
+                      pathname === "/companyoverview" ? "activeNav" : ""
+                    }
+                    onClick={(e) =>
+                      handleDropdownNavigate("/companyoverview", e)
+                    }
                   >
                     Company Overview
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
+                  <NavDropdown.Item
                     className={pathname === "/news-events" ? "activeNav" : ""}
                     onClick={(e) => handleDropdownNavigate("/news-events", e)}
                   >
                     News & Events
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
+                  <NavDropdown.Item
                     className={pathname === "/management" ? "activeNav" : ""}
                     onClick={(e) => handleDropdownNavigate("/management", e)}
                   >
                     Management Team
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
+                  <NavDropdown.Item
                     className={pathname === "/engineering" ? "activeNav" : ""}
                     onClick={(e) => handleDropdownNavigate("/engineering", e)}
                   >
                     Engineering Excellence
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
+                  <NavDropdown.Item
                     className={pathname === "/manufacturing" ? "activeNav" : ""}
                     onClick={(e) => handleDropdownNavigate("/manufacturing", e)}
                   >
                     Manufacturing Process
                   </NavDropdown.Item>
-                  <NavDropdown.Item 
+                  <NavDropdown.Item
                     className={pathname === "/qualitystd" ? "activeNav" : ""}
                     onClick={(e) => handleDropdownNavigate("/qualitystd", e)}
                   >
                     Quality Standards
- </NavDropdown.Item>
+                  </NavDropdown.Item>
                 </NavDropdown>
 
-                {/* Products Dropdown */}
+                {/* ---------------------Products------------- */}
+
                 <NavDropdown
                   className="fw-bold navItem"
                   title={
@@ -148,28 +157,31 @@ const HeadNavBar = () => {
                       Products <FaCaretDown />
                     </>
                   }
-                  onMouseOver={() => handleMouseOver('products')}
+                  onMouseOver={handleMouseOver}
                   onMouseOut={handleMouseOut}
-                  show={openDropdown === 'products'}
+                  show={showDropdown}
                 >
                   <NavDropdown
+                    // className="navcolor"
                     title={
                       <>
                         Power Supply Unit <FaCaretRight />
                       </>
                     }
-                    // drop="end"
+                    drop="end"
                     className="submenu"
                     onClick={(e) =>
                       handleDropdownNavigate("/power-supply-unit", e)
                     }
-                    onMouseOver={() => handleMouseOver('powerSupplyUnit')}
-                    onMouseOut={handleMouseOut}
-                    show={openDropdown === 'powerSupplyUnit'}
+                    onMouseOver={handleSubMenuMouseOver}
+                    onMouseOut={handleSubMenuMouseOut}
+                    show={showSubMenu}
                   >
-                    <NavDropdown.Item 
+                    <NavDropdown.Item
                       className={
-                        pathname === "/power-supply-unit/standard" ? "activeNav" : ""
+                        pathname === "/power-supply-unit/standard"
+                          ? "activeNav"
+                          : ""
                       }
                       onClick={(e) =>
                         handleDropdownNavigate("/power-supply-unit", e)
@@ -184,7 +196,8 @@ const HeadNavBar = () => {
                       Customised
                     </NavDropdown.Item>
                   </NavDropdown>
-                  <NavDropdown.Item 
+                  <NavDropdown.Item
+                    // className=""
                     className={pathname === "/backplane" ? "activeNav" : ""}
                     onClick={(e) => handleDropdownNavigate("/backplane", e)}
                   >
@@ -196,14 +209,14 @@ const HeadNavBar = () => {
                         Rugged Display Solutions <FaCaretRight />
                       </>
                     }
-                    // drop="end"
+                    drop="end"
                     className="submenu"
                     onClick={(e) =>
                       handleDropdownNavigate("/rug-display-solutions", e)
                     }
-                    onMouseOver={() => handleMouseOver('rugDisplaySolutions')}
-                    onMouseOut={handleMouseOut}
-                    show={openDropdown === 'rugDisplaySolutions'}
+                    onMouseOver={handleSubMenuMouseOver}
+                    onMouseOut={handleSubMenuMouseOut}
+                    show={showSubMenu}
                   >
                     <NavDropdown.Item
                       onClick={(e) =>
@@ -238,14 +251,14 @@ const HeadNavBar = () => {
                         Servers & Workstations <FaCaretRight />
                       </>
                     }
-                    // drop="end"
+                    drop="end"
                     className="submenu"
                     onClick={(e) =>
                       handleDropdownNavigate("/servers-workstations", e)
                     }
-                    onMouseOver={() => handleMouseOver('serversWorkstations')}
-                    onMouseOut={handleMouseOut}
-                    show={openDropdown === 'serversWorkstations'}
+                    onMouseOver={handleSubMenuMouseOver}
+                    onMouseOut={handleSubMenuMouseOut}
+                    show={showSubMenu}
                   >
                     <NavDropdown.Item
                       onClick={(e) =>
@@ -268,12 +281,12 @@ const HeadNavBar = () => {
                         Rugged PC <FaCaretRight />
                       </>
                     }
-                    // drop="end"
+                    drop="end"
                     className="submenu"
                     onClick={(e) => handleDropdownNavigate("/rug-pc", e)}
-                    onMouseOver={() => handleMouseOver('rugPC')}
-                    onMouseOut={handleMouseOut}
-                    show={openDropdown === 'rugPC'}
+                    onMouseOver={handleSubMenuMouseOver}
+                    onMouseOut={handleSubMenuMouseOut}
+                    show={showSubMenu}
                   >
                     <NavDropdown.Item
                       onClick={(e) => handleDropdownNavigate("/laptop", e)}
@@ -293,7 +306,7 @@ const HeadNavBar = () => {
                   </NavDropdown>
                 </NavDropdown>
 
-                {/* Services Dropdown */}
+                {/* -----------------Services-------------------- */}
                 <NavDropdown
                   className="fw-bold navItem"
                   title={
@@ -301,24 +314,24 @@ const HeadNavBar = () => {
                       Services <FaCaretDown />
                     </>
                   }
-                  onMouseOver={() => handleMouseOver('services')}
+                  onMouseOver={handleMouseOver}
                   onMouseOut={handleMouseOut}
-                  show={openDropdown === 'services'}
+                  show={showDropdown}
                 >
                   <NavDropdown
                     title={
                       <>
-                        Design Services <FaCaretRight className=" rightArr" />
+                        Design Services <FaCaretRight className="rightArr" />
                       </>
                     }
-                    // drop="end"
+                    drop="end"
                     className="submenu"
                     onClick={(e) =>
                       handleDropdownNavigate("/designservices", e)
                     }
-                    onMouseOver={() => handleMouseOver('designServices')}
-                    onMouseOut={handleMouseOut}
-                    show={openDropdown === 'designServices'}
+                    onMouseOver={handleSubMenuMouseOver}
+                    onMouseOut={handleSubMenuMouseOut}
+                    show={showSubMenu}
                   >
                     <NavDropdown
                       title={
@@ -326,25 +339,31 @@ const HeadNavBar = () => {
                           Mechanical <FaCaretRight className="rightArr" />
                         </>
                       }
-                      // drop="end"
+                      drop="end"
                       className="submenu"
                       onClick={(e) =>
                         handleDropdownNavigate("/designservices/mechanical", e)
                       }
-                      onMouseOver={() => handleMouseOver('mechanical')}
-                      onMouseOut={handleMouseOut}
-                      show={openDropdown === 'mechanical'}
+                      onMouseOver={handleSubMenuMouseOver}
+                      onMouseOut={handleSubMenuMouseOut}
+                      show={showSubMenu}
                     >
                       <NavDropdown.Item
                         onClick={() =>
-                          handleLinkClick("/designservices/mechanical/modeling", "modeling")
+                          handleLinkClick(
+                            "/designservices/mechanical/modeling",
+                            "modeling"
+                          )
                         }
                       >
                         Modeling
                       </NavDropdown.Item>
                       <NavDropdown.Item
                         onClick={() =>
-                          handleLinkClick("/designservices/mechanical", "thermal-analysis")
+                          handleLinkClick(
+                            "/designservices/mechanical",
+                            "thermal-analysis"
+                          )
                         }
                       >
                         Thermal Analysis
@@ -399,15 +418,15 @@ const HeadNavBar = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                {/* Contact Us */}
+                {/* -----------------Contact Us---------------------- */}
                 <Nav.Link className="fw-bold navItem" href="/contactus">
                   Contact US
                 </Nav.Link>
-
-                <Form className="d-flex mt-3  mt-lg-0">
-                  <RugButton label="REQUEST A QUOTE" href="#large" size="large" />
-                </Form>
               </Nav>
+
+              <Form className="d-flex mt-3  mt-lg-0">
+                <RugButton label="REQUEST A QUOTE" href="#large" size="large" />
+              </Form>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>

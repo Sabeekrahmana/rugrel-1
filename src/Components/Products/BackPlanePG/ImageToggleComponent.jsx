@@ -1,7 +1,7 @@
 // ImageToggleComponent.js
 import React, { useState } from "react";
 import { Row, Col, Button, Container } from "react-bootstrap";
-import './Ordering.css'
+import "./Ordering.css";
 import pcb1 from "../../../Assets/images/AllproductsImages/BackplaneImg/Backplane/forShow/showVpx (1).png";
 import pcb2 from "../../../Assets/images/AllproductsImages/BackplaneImg/Backplane/forShow/showVpx (2).png";
 import pcb3 from "../../../Assets/images/AllproductsImages/BackplaneImg/Backplane/forShow/showVpx (3).png";
@@ -43,7 +43,11 @@ const ImageToggleComponent = () => {
           <div className="my-4">
             <Row>
               {pcbData.map((img, idx) => (
-                <Col md={4} key={idx} className="text-center my-3">
+                <Col
+                  md={4}
+                  key={idx}
+                  className="text-center my-3 d-flex justify-content-center align-items-center flex-column"
+                >
                   <div className="ImgToggle">
                     <img
                       src={img.imgSrc}

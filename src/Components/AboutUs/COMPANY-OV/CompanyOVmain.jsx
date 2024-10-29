@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { MdPlayArrow } from "react-icons/md";
 import { BiSolidDownArrow } from "react-icons/bi";
-import FirstBanner from '../BannerPage/FirstBanner';
+// import FirstBanner from '../BannerPage/FirstBanner';
 
 const CompanyOVmain = () => {
   const [activeItem, setActiveItem] = useState('COMPANY OVERVIEW');
