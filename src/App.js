@@ -10,7 +10,7 @@ import ManagementTeam from "./Components/AboutUs/MANAGEMENT/ManagementTeam";
 import QualityStd from "./Components/AboutUs/QUALITY-STD/QualityStd";
 import CompanyOverView from "./Components/AboutUs/COMPANY-OV/CompanyOverView";
 import ContactMain from "./Components/ContactUs/ContactMain";
-import LogInUp from "./Components/LoginPages/LogInUp";
+// import LogInUp from "./Components/LoginPages/LogInUp";
 // SERVICES NAVIGATE
 import DesignServices from "./Components/Services/DesignServices/DesignServices";
 import Mechanical from "./Components/Services/DesignServices/Mechanical/Mechanical";
@@ -34,6 +34,7 @@ import RugLoptop from "./Components/Products/RuggedPC/SubRugPro/RugLoptop";
 import RugTablets from "./Components/Products/RuggedPC/SubRugPro/RugTablets";
 import BoxPc from "./Components/Products/RuggedPC/SubRugPro/BoxPc";
 import CustomPSU from "./Components/Products/PowerSupplyUnit/SubPUSPage/CustomPSU";
+import Mainform from "./Components/LoginPages/Mainform";
 
 
 
@@ -59,7 +60,10 @@ function App() {
           <Route path="/backplane" element={<BackPlane />} />
           <Route path="/customPSU" element={<CustomPSU />} />
           <Route path="/radar-computer" element={<RadarComputer />} />
-          <Route path="/rug-display-solutions" element={<RugDisplaySolution />} />
+          <Route
+            path="/rug-display-solutions"
+            element={<RugDisplaySolution />}
+          />
           <Route path="/dual-monitor-console" element={<Dual />} />
           <Route path="/servers-workstations" element={<ServerWorkstation />} />
           <Route path="/rug-pc" element={<RugPC />} />
@@ -71,7 +75,7 @@ function App() {
 
           {/* <-----------LIGIN PAGES ---------->  */}
 
-          <Route path="/loginup" element={<LogInUp />} />
+          <Route path="/mainform" element={<Mainform />} />
 
           {/* <-----------SERVICES PAGES ---------->  */}
 

@@ -22,7 +22,7 @@ const ProductsInfo = ({ head, sliderImages, texts, mainTitle, id }) => {
       </strong>
       <br />
       <Row className="justify-content-center  w-100 h-100">
-        <Col xs={12} sm={11} md={4} lg={4}>
+        <Col xs={12} sm={11} md={5} lg={4}>
           <div className="infoimg  h-100 ">
             <Slider {...settings}>
               {sliderImages.map((image, index) => (
@@ -42,12 +42,12 @@ const ProductsInfo = ({ head, sliderImages, texts, mainTitle, id }) => {
             </Slider>
           </div>
         </Col>
-        <Col xs={12} sm={11} md={8} lg={8}>
+        <Col xs={12} sm={11} md={7} lg={8}>
           <div className="infoData w-100 h-100 p-4">
             <h3 className="fs-4">{head}</h3>
             <hr />
             {texts.map((text, index) => (
-              <p key={index}>{text}</p>
+              <p  key={index}>{text}</p>
             ))}
           </div>
         </Col>

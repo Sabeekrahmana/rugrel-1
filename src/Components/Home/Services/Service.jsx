@@ -17,27 +17,32 @@ const Service = () => {
     {
       image: serviceImg1,
       serviceName: "Design Services",
-      serviceDescription: "At Rug-Rel Components & Systems Pvt. Ltd., we specialize in providing high-quality, defense-grade electronic systems and solutions. Our services are meticulously designed to meet the rigorous demands of defense, aerospace, industrial, and other high-reliability sectors. With cutting-edge technology and ISO-certified facilities, we deliver tailored solutions across multiple verticals.",
+      serviceDescription:
+        "At Rug-Rel Components & Systems Pvt. Ltd., we specialize in providing high-quality, defense-grade electronic systems and solutions. Our services are meticulously designed to meet the rigorous demands of defense, aerospace, industrial, and other high-reliability sectors. With cutting-edge technology and ISO-certified facilities, we deliver tailored solutions across multiple verticals.",
     },
     {
       image: serviceImg2,
       serviceName: "Manufacturing",
-      serviceDescription: "Manufacture engineering services are critical in ensuring that mechanical systems are efficient, reliable, and sustainable. Our team offers comprehensive services in modeling, thermal analysis, and structural analysis.",
+      serviceDescription:
+        "Manufacture engineering services are critical in ensuring that mechanical systems are efficient, reliable, and sustainable. Our team offers comprehensive services in modeling, thermal analysis, and structural analysis.",
     },
     {
       image: serviceImg3,
       serviceName: "PCB Assembly Three",
-      serviceDescription: "At Rug-Rel, we provide end-to-end PCB assembly services, including surface-mount technology (SMT) and through-hole technology (THT). Our advanced assembly processes ensure that PCBs are built to precise specifications, with rigorous quality control at each step to ensure reliability. We specialize in defense-grade PCB assembly, focusing on high-frequency, RF, and multi-layer boards that meet strict military standards. Our ESD-protected facilities guarantee the highest levels of safety and performance in every assembly.",
+      serviceDescription:
+        "At Rug-Rel, we offer complete PCB assembly services, including SMT and THT. Our advanced processes ensure precision and quality control at every step for reliable results. Specializing in defense-grade PCB assembly, we focus on high-frequency, RF, and multi-layer boards that meet strict military standards. Our ESD-protected facilities ensure top safety and performance.",
     },
     {
       image: serviceImg4,
       serviceName: "Cable assembly and wire harness",
-      serviceDescription: "At Rug-Rel, we provide custom cable assembly services designed to meet the stringent requirements of defense and aerospace industries. Our cables are engineered to endure extreme conditions, including high temperatures, mechanical stress, and exposure to harsh environments. Our assemblies comply with military-grade standards, ensuring long-term durability and optimal performance.",
+      serviceDescription:
+        "At Rug-Rel, we provide custom cable assembly services designed to meet the stringent requirements of defense and aerospace industries. Our cables are engineered to endure extreme conditions, including high temperatures, mechanical stress, and exposure to harsh environments. Our assemblies comply with military-grade standards, ensuring long-term durability and optimal performance.",
     },
     {
       image: serviceImg5,
       serviceName: "System Integration",
-      serviceDescription: "Our system integration services involve the seamless integration of mechanical and electronic subsystems into fully operational defense systems. We provide end-to-end integration, including hardware, software, and firmware, ensuring that all components work together efficiently. We also offer testing and validation services to ensure the systems meet all necessary defense and aerospace standards.",
+      serviceDescription:
+        "Our system integration services involve the seamless integration of mechanical and electronic subsystems into fully operational defense systems. We provide end-to-end integration, including hardware, software, and firmware, ensuring that all components work together efficiently. We also offer testing and validation services to ensure the systems meet all necessary defense and aerospace standards.",
     },
   ];
 
@@ -60,7 +65,16 @@ const Service = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 770,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 500,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -71,20 +85,29 @@ const Service = () => {
 
   return (
     <>
-      <Container  className="services-container">
+      <Container  className="services-container my-5  w-100">
         <div className="services-header">
-          <h1 className="fw-bold">SERVICES</h1>
+          <h1 className="fw-bold  text-center my-5">SERVICES</h1>
         </div>
-        <Slider {...settings}>
+        <Slider {...settings} className="w-100">
           {servicesData.map((service, index) => (
-            <div key={index} className="d-flex justify-content-center">
-              <Card className="Pr_card service-card mx-2">
+            <div
+              key={index}
+              className="d-flex justify-content-center align-items-center flex-wrap"
+            >
+              <Card className=" service-card  ">
                 <div className="ser-img-container">
-                  <Card.Img className="ser-img" variant="top" src={service.image} />
+                  <Card.Img
+                    className="ser-img"
+                    variant="top"
+                    src={service.image}
+                  />
                 </div>
-                <Card.Body className="card-body">
-                  <Card.Title className="card-title">{service.serviceName}</Card.Title>
-                  <Card.Text className="card-description">
+                <Card.Body className="card-body p-3">
+                  <Card.Title className="card-title fw-bolder fs-4">
+                    {service.serviceName}
+                  </Card.Title>
+                  <Card.Text className="card-description  mt-2">
                     {service.serviceDescription}
                   </Card.Text>
                 </Card.Body>

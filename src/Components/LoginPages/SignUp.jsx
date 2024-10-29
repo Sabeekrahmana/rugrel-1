@@ -1,47 +1,139 @@
-// SignUp.js
-import React from 'react';
-import { Form, Button } from 'react-bootstrap';
+import React from "react";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { Eye, EyeSlash } from "react-bootstrap-icons";
+import './SignPG.css'
 
-const SignUp = ({ toggleForm }) => {
+const SignUp = ({
+  handleButtonClick,
+  isLogin,
+  data,
+  setData,
+  showPassword,
+  handleClickShowPassword,
+  showConfirmPassword,
+  handleClickShowConfirmPassword,
+  postDataSignUp,
+}) => {
   return (
-    <div className="bgLogin">
-         <div className='signIn_main'>
-      <h2 className='text-center fw-bold'>Sign Up</h2>
-      <Form>
-        <Form.Group controlId="formBasicName">
-          <Form.Label className='mt-2'>First name</Form.Label>
-          <Form.Control type="text" />
-        </Form.Group>
+    <Container className="mt-4">
+      <Row className="justify-content-md-center">
+        <Col md={10} sm={11} xs={12}>
+          <h2>Sign Up</h2>
+          <Form>
+            <Form.Group className="mb-3" controlId="formName">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter your name"
+                value={data.Name}
+                onChange={(e) => setData({ ...data, Name: e.target.value })}
+                required
+              />
+            </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label className='mt-2'>Last name</Form.Label>
-          <Form.Control type="text" />
-        </Form.Group>
+            <Form.Group className="mb-3" controlId="formEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter your email"
+                value={data.email}
+                onChange={(e) => setData({ ...data, email: e.target.value })}
+                required
+              />
+            </Form.Group>
 
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label className='mt-2'>Email address</Form.Label>
-          <Form.Control type="email" />
-        </Form.Group>
+            <Form.Group className="mb-3" controlId="formPassword">
+              <Form.Label>Password</Form.Label>
+              <div className="input-group">
+                <Form.Control
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Enter password"
+                  value={data.Password}
+                  onChange={(e) => 
+                    setData({ ...data, Password: e.target.value })
+                  }
+                  required
+                />
+                <Button
+                  variant="outline-secondary"
+                  onClick={handleClickShowPassword}
+                  aria-label="toggle password visibility"
+                >
+                  {showPassword ? <EyeSlash /> : <Eye />}
+                </Button>
+              </div>
+            </Form.Group>
 
-        <Form.Group controlId="formBasicConfirmPassword">
-          <Form.Label className='mt-2'>Business name</Form.Label>
-          <Form.Control type="text" />
-        </Form.Group>
-        <Form.Group controlId="formBasicCheckbox" className='d-flex align-items-center w-100 fs-12'>   
-          <Form.Check type="checkbox" className="me-2"/>
-          <Form.Label className='mt-2'>I agree to the terms and conditions</Form.Label>
-        </Form.Group>
-        <Button variant="primary" type="submit" className="my-3 mx-auto d-block CardBtn p-2 fw-bold fs-6 w-100">
-          Sign Up
-        </Button>
-      </Form>
-      <p className='fs-10 text-center' >
-        Already have an account? <span onClick={toggleForm} style={{ cursor: 'pointer', color: 'blue' }}>Sign In</span>
-      </p>
-    </div>
-    </div>
-   
+            <Form.Group className="mb-3" controlId="formConfirmPassword">
+              <Form.Label>Confirm Password</Form.Label>
+              <div className="input-group">
+                <Form.Control
+                  type={showConfirmPassword ? "text" : "password"}
+                  placeholder="Confirm password"
+                  value={data.confirmPassword}
+                  onChange={(e) =>
+                    setData({ ...data, confirmPassword: e.target.value })
+                  }
+                  required
+                />
+                <Button
+                  variant="outline-secondary"
+                  onClick={handleClickShowConfirmPassword}
+                  aria-label="toggle confirm password visibility"
+                >
+                  {showConfirmPassword ? <EyeSlash /> : <Eye />}
+                </Button>
+              </div>
+            </Form.Group>
+
+            {/* Terms and Conditions checkbox */}
+            <Form.Group controlId="formBasicCheckbox" className="mb-3">
+              <Form.Check
+                type="checkbox"
+                label={
+                  <>
+                    I agree to the{" "}
+                    <NavLink
+                      to="#"
+                      style={{ textDecoration: "none", fontSize: "12px" }}
+                    >
+                      Terms of Condition
+                    </NavLink>{" "}
+                    and{" "}
+                    <NavLink
+                      to="#"
+                      style={{ textDecoration: "none", fontSize: "12px" }}
+                    >
+                      Privacy Policy
+                    </NavLink>
+                  </>
+                }
+                required
+              />
+            </Form.Group>
+
+            <Button
+              variant="warning"
+              className="w-100"
+              style={{ marginTop: "10px", backgroundColor: "purple",border:"purple",color:"#fff", fontWeight:"550" }}
+              onClick={() => postDataSignUp()}
+            >
+              Sign Up
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
 export default SignUp;
+
+
+
+
+
+
+
+
