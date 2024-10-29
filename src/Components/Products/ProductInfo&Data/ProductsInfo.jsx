@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ProInfo&Data.css";
 import { Container, Row, Col } from "react-bootstrap";
 import Slider from "react-slick";
@@ -14,6 +14,9 @@ const ProductsInfo = ({ head, sliderImages, texts, mainTitle, id }) => {
     speed: 2000,
     autoplaySpeed: 2000,
   };
+
+  useEffect(() => window.scroll(0, 0), []);
+
 
   return (
     <Container className="my-5 w-100 h-100" id={id}>

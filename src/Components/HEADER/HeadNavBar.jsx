@@ -75,12 +75,12 @@ const HeadNavBar = () => {
             style={{ cursor: "pointer" }}
           />
           <Navbar.Toggle
-            aria-controls={`offcanvasNavbar-expand-md`}
+            aria-controls={offcanvasNavbar-expand-md}
             className="custom-toggle"
           />
           <Navbar.Offcanvas
-            id={`offcanvasNavbar-expand-md`}
-            aria-labelledby={`offcanvasNavbarLabel-expand-md`}
+            id={offcanvasNavbar-expand-md}
+            aria-labelledby={offcanvasNavbarLabel-expand-md}
             placement="end"
           >
             <Offcanvas.Header closeButton></Offcanvas.Header>

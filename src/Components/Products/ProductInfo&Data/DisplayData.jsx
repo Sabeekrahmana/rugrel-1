@@ -2,7 +2,7 @@ import React from "react";
 import "./ProInfo&Data.css";
 import { Container } from "react-bootstrap";
 
-const DisplayData = ( {PDD1,PDD2,PDD3,PTD1,PTD2,PTD3}) => {
+const DisplayData = ( {PDD1,PDD2,PDD3,PTD1,PTD2,PTD3} ) => {
   return (
     <>
       <Container className="displaydata">

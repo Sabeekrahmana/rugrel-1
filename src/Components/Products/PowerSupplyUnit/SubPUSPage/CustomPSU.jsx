@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TitleData from "../../TitleData/TitleData";
 import ProductsInfo from "../../ProductInfo&Data/ProductsInfo";
 import DisplayData from "../../ProductInfo&Data/DisplayData";
@@ -15,6 +15,9 @@ import { AllDescriptionData } from "../../ProductInfo&Data/AllDescriptionData";
 import { AllImagesData } from "../../ProductInfo&Data/AllImagesData";
 
 const CustomPSU = () => {
+
+  useEffect(() => window.scroll(0, 0), []);
+
   return (
     <>
       <HeadNavBar />

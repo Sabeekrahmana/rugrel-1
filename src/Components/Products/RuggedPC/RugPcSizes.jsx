@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, Container, ListGroup, Row, Col } from "react-bootstrap";
 import "./Size.css";
@@ -100,4 +99,3 @@ const RugPcSizes = ({ CardTitle, sizeBtn }) => {
 };
 
 export default RugPcSizes;
-
