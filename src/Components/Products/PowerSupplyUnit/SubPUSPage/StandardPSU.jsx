@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import HeadNavBar from '../../../HEADER/HeadNavBar';
 import TitleData from '../../TitleData/TitleData';
 import { PD_Data } from '../../ProductInfo&Data/ProductsAllData';
@@ -15,6 +15,9 @@ import Footer from '../../../FOOTER/Footer';
 import { AllDescriptionData } from '../../ProductInfo&Data/AllDescriptionData';
 
 const StandardPSU = () => {
+
+  useEffect(() => window.scroll(0, 0), []);
+
   return (
     <>
       <HeadNavBar />

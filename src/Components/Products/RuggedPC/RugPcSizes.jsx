@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Container, ListGroup } from "react-bootstrap";
 import "./Size.css";
 import PcImg from "../../../Assets/images/AllproductsImages/RPC_Img/rpc_2.png";
@@ -7,6 +7,8 @@ import boxImg from "../../../Assets/images/AllproductsImages/BoxPcImg/box3.png";
 import { FaArrowRight } from "react-icons/fa";
 
 const RugPcSizes = ({ CardTitle, sizeBtn }) => {
+  useEffect(() => window.scroll(0, 0), []);
+
   return (
     <>
       <Container className="my-5 d-flex justify-content-around align-items-center">

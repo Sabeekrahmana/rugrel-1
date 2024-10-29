@@ -12,14 +12,11 @@
 
   .border-line {
     width: 85%;
-
-    /* width: 83.33333%; */
     border: 1px solid rgba(46, 42, 37, .8);
     margin: 0.875rem 1.25rem 0 0;
 }
   
   .lineBtn button {
-    /* margin-left: 20px; */
     margin: 10px 0 0;
     padding: .25rem .75rem;
     color: #fff;
@@ -32,7 +29,6 @@
     border: 1px solid #9c27b0ad;
     text-transform: uppercase;
     display: inline-block;
-    /* font-family: "Avenir LT W01_95 Black1475556"; */
     transition: .5s all ease-in-out;
     letter-spacing: 1px;
 
@@ -43,6 +39,36 @@
     }
     
   }
+
+  /* Tablet screens (768px and above) */
+@media (min-width: 768px) {
+  .lineBtn button {
+      font-size: 0.8rem; 
+      padding: 0.35rem 1rem; 
+      letter-spacing: 1.2px;
+       white-space: nowrap; 
+  }
+}
+
+/* Mobile-L screens (425px and above) */
+@media (max-width: 768px) and (min-width: 425px) {
+  .lineBtn button {
+      font-size: 0.7rem; 
+      padding: 0.3rem 0.9rem;
+      letter-spacing: 1.1px; 
+       white-space: nowrap; 
+  }
+}
+
+/* Mobile-M/S screens (below 425px) */
+@media (max-width: 425px) {
+  .lineBtn button {
+      font-size: 0.625rem; 
+      padding: 0.25rem 0.75rem;
+      letter-spacing: 1px; 
+       white-space: nowrap; 
+  }
+}
   
   .accordion .card{
     border: 0;
@@ -60,7 +86,7 @@
   }
   
   .accordion-body {
-    background-color: transparent; /* Change as needed */
+    background-color: transparent; 
   }
   
   /* MANUFACTURE STYLING */
@@ -88,17 +114,17 @@
 
   /* Custom Solutions - Two Images Section */
 .two-images-section .custom-image-size {
-  width: 100%;  /* Ensure images fill their containers */
-  height: 250px;  /* Set equal height */
-  object-fit: cover;  /* Ensure images maintain aspect ratio */
+  width: 100%;  
+  height: 250px;  
+  object-fit: cover;  
 }
 
 /* Single Image Section */
 .single-image-size {
-  width: 70%;  /* Adjust the width */
+  width: 70%; 
   max-width: fit-content;
   /* height: 230px;  */
-  object-fit: cover;  /* Maintain aspect ratio */
+  object-fit: cover;  
 }
 
 
@@ -109,4 +135,21 @@
   text-align: left;
 }
 
+  /* Related Products Images CSS  */
+
+  .product-container {
+    width: 100%; /* Ensures the container uses full width of Col */
+    display: flex;
+    flex-direction: column; /* Stack image and title vertically */
+    align-items: center; /* Center everything horizontally */
+  }
+  
+  .product-image {
+    width: 100%; /* Make image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 200px; /* Set a maximum width for images */
+    max-height: 200px; /* Set a maximum height for images */
+    object-fit: cover; /* Cover to fill the area while maintaining aspect ratio */
+    /* border-radius: 8px; Optional: rounded corners */
+  }
   

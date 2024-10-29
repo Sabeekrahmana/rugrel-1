@@ -1,8 +1,11 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-import carimg1 from "../../../Assets/images/Carouselimg/c4.jpg";
-import carimg2 from "../../../Assets/images/Carouselimg/c2.jpg";
-import carimg3 from "../../../Assets/images/Carouselimg/c3.jpeg";
+// import carimg1 from "../../../Assets/images/Carouselimg/c4.jpg";
+import carimg1 from "../../../Assets/images/military/mili1.jpg";
+// import carimg2 from "../../../Assets/images/Carouselimg/c2.jpg";
+import carimg2 from "../../../Assets/images/military/mili2.jpg";
+// import carimg3 from "../../../Assets/images/Carouselimg/c3.jpeg";
+import carimg3 from "../../../Assets/images/military/mili4.jpg";
 
 const HomeCarousel = () => {
   return (

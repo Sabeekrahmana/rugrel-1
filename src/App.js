@@ -34,6 +34,9 @@ import RugLoptop from "./Components/Products/RuggedPC/SubRugPro/RugLoptop";
 import RugTablets from "./Components/Products/RuggedPC/SubRugPro/RugTablets";
 import BoxPc from "./Components/Products/RuggedPC/SubRugPro/BoxPc";
 import CustomPSU from "./Components/Products/PowerSupplyUnit/SubPUSPage/CustomPSU";
+import StandardPSU from "./Components/Products/PowerSupplyUnit/SubPUSPage/StandardPSU";
+import RugMonitor from "./Components/Products/RuggedDisplaySolutions/RDSSub/RugMonitor";
+// import standard from "./Components/Products/PowerSupplyUnit/SubPUSPage/StandardPSU";
 
 
 
@@ -58,16 +61,22 @@ function App() {
           <Route path="/power-supply-unit" element={<PowerSupplyUnit />} />
           <Route path="/backplane" element={<BackPlane />} />
           <Route path="/customPSU" element={<CustomPSU />} />
+          <Route path="/standard" element={<StandardPSU />} />
           <Route path="/radar-computer" element={<RadarComputer />} />
           <Route path="/rug-display-solutions" element={<RugDisplaySolution />} />
           <Route path="/dual-monitor-console" element={<Dual />} />
           <Route path="/servers-workstations" element={<ServerWorkstation />} />
           <Route path="/rug-pc" element={<RugPC />} />
+          <Route path="/rug-monitor" element={<RugMonitor />} />
           <Route path="/panel-pc" element={<PanelPc />} />
           <Route path="/work-station" element={<Workstation />} />
           <Route path="/laptop" element={<RugLoptop />} />
           <Route path="/tablet" element={<RugTablets />} />
           <Route path="/box" element={<BoxPc />} />
+
+
+
+
 
           {/* <-----------LIGIN PAGES ---------->  */}
 

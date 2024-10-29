@@ -9,20 +9,38 @@ import ServiceBanner from '../ServiceBanners/ServiceBanner';
 import ban4 from "../../../Assets/images/ServicesImg/manufacture.jpg";
 import HeadNavBar from '../../HEADER/HeadNavBar';
 import Footer from '../../FOOTER/Footer';
+import { useNavigate } from 'react-router-dom';
+import rel1 from '../../../Assets/images/AllproductsImages/BoxPcImg/box2.png';
+import rel2 from '../../../Assets/images/AllproductsImages/RugTabletsImg/Tabletsix.png';
+import rel3 from '../../../Assets/images/AllproductsImages/RugLoptopImg/lop (2).png';
+
 
 const SystemIntegration = () => {
-  const [activeSection, setActiveSection] = useState(null);
+  const [showRelatedProducts, setShowRelatedProducts] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => window.scroll(0, 0), []);
 
-  const handleButtonClick = (index) => {
-    setActiveSection(activeSection === index ? null : index);
+  const handleProductClick = (productLink) => {
+    navigate(productLink);
   };
 
   const relatedProductsData = [
-    { imgSrc: partImg1, title: "Related Product 1" },
-    { imgSrc: partImg2, title: "Related Product 2" },
-    { imgSrc: partImg3, title: "Related Product 3" }
+    {
+      imgSrc: rel1,
+      title: "Rugged Box PC",
+      link: "/box", 
+    },
+    {
+      imgSrc: rel2,
+      title: "Rugged Tablet",
+      link: "/tablet", 
+    },
+    {
+      imgSrc: rel3,
+      title: "Rugged Laptop",
+      link: "/laptop", 
+    },
   ];
 
   return (
@@ -35,17 +53,6 @@ const SystemIntegration = () => {
         <p className="text-justify mb-5">
           Our system integration services involve the seamless integration of mechanical and electronic subsystems into fully operational defense systems. We provide end-to-end integration, including hardware, software, and firmware, ensuring that all components work together efficiently. We also offer testing and validation services to ensure the systems meet all necessary defense and aerospace standards.
         </p>
-
-        {/* Main Image Above Description */}
-        {/* <Row className="my-5">
-          <Col md={12} className="text-center">
-            <img
-              src={sysIntBanner}
-              alt="System Integration"
-              className="img-fluid mb-4"
-            />
-          </Col>
-        </Row> */}
 
         {/* 3 Images in a Row */}
         <Row className="text-center my-5">
@@ -66,24 +73,32 @@ const SystemIntegration = () => {
         {/* Line and Button */}
         <div className="lineBtn my-5">
           <div className="border-line"></div>
-          <Button onClick={() => handleButtonClick(0)}>
-            {activeSection === 0 ? "Read Less" : "Read More"}
+          <Button onClick={() => setShowRelatedProducts(!showRelatedProducts)}>
+            {showRelatedProducts ? "Read Less" : "Read More"}
           </Button>
         </div>
 
-        {/* Related Products */}
-        {activeSection === 0 && (
+        {/* Display Related Products when "Read More" is clicked */}
+        {showRelatedProducts && (
           <div className="my-4">
             <h4>Related Products</h4>
             <Row>
               {relatedProductsData.map((product, idx) => (
-                <Col md={4} key={idx} className="text-center my-3">
-                  <img
-                    src={product.imgSrc}
-                    alt={product.title}
-                    className="img-fluid mb-2"
-                  />
-                  <h5>{product.title}</h5>
+                <Col
+                  md={4}
+                  key={idx}
+                  className="text-center my-3"
+                  onClick={() => handleProductClick(product.link)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="product-container">
+                    <img
+                      src={product.imgSrc}
+                      alt={product.title}
+                      className="img-fluid product-image"
+                    />
+                    <h5>{product.title}</h5>
+                  </div>
                 </Col>
               ))}
             </Row>

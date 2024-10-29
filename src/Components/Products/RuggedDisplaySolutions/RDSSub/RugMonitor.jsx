@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import HeadNavBar from '../../../HEADER/HeadNavBar';
 import TitleData from '../../TitleData/TitleData';
 import ProductsData from '../../ProductInfo&Data/ProductsData';
@@ -15,6 +15,9 @@ import MapDetails from '../../../ContactUs/MapDetails';
 import Footer from '../../../FOOTER/Footer';
 
 const RugMonitor = () => {
+
+  useEffect(() => window.scroll(0, 0), []);
+
   return (
     <>
       <HeadNavBar />
@@ -51,14 +54,7 @@ const RugMonitor = () => {
         sliderImages={AllImagesData.sliderImagesMointor_one}
         texts={AllDescriptionData.texts_monitor1}
       />
-      {/* <DisplayData
-        PDD1="MIL STD 704F "
-        PDD2="MIL STD 461F "
-        PDD3="MIL STD 810G "
-        PTD1="Complied"
-        PTD2="Complied"
-        PTD3="Complied"
-      /> */}
+     
       <ProductFeature features={AllFeatureData.featureList_Monitor1} />
       <ProductsInfo
         id="Monitor2"

@@ -1,28 +1,39 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import ban3 from "../../../Assets/images/ServicesImg/ban3.jpg";
+import { Button, Col, Container, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom"; // for navigation
+import "../ServicePages.css";
 import ServiceBanner from "../ServiceBanners/ServiceBanner";
 import SecondBanner from "../../AboutUs/BannerPage/SecondBanner";
 import HeadNavBar from "../../HEADER/HeadNavBar";
 import Footer from "../../FOOTER/Footer";
+import ban3 from "../../../Assets/images/ServicesImg/ban3.jpg";
 import pcb1 from "../../../Assets/images/Img-Mech-dsn/PCB Assembly/pcb assembly (1).jpg";
 import pcb2 from "../../../Assets/images/Img-Mech-dsn/PCB Assembly/pcb assembly (2).jpg";
 import pcb3 from "../../../Assets/images/Img-Mech-dsn/PCB Assembly/pcb assembly (3).jpg";
-
+import rel1 from "../../../Assets/images/AllproductsImages/RugDisplayImg/RDS (7).png";
+import rel2 from "../../../Assets/images/AllproductsImages/PanelPcImg/ppc (3).png";
+import rel3 from "../../../Assets/images/AllproductsImages/RugDisplayImg/RDS (6).png";
 
 const PcbAssembly = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [showRelatedProducts, setShowRelatedProducts] = useState(false);
+  const navigate = useNavigate(); // to navigate to product pages
 
   useEffect(() => window.scroll(0, 0), []);
 
-  const handleButtonClick = () => {
-    setIsExpanded(!isExpanded);
+  const handleProductClick = (productLink) => {
+    navigate(productLink); // navigate to the respective product page
   };
 
   const pcbData = [
     { imgSrc: pcb1, title: "PCB Type 1" },
     { imgSrc: pcb2, title: "PCB Type 2" },
     { imgSrc: pcb3, title: "PCB Type 3" },
+  ];
+
+  const relatedProductsData = [
+    { imgSrc: rel1, title: "Rugged Monitor", link: "/rug-monitor" },
+    { imgSrc: rel2, title: "Rugged Panel PC", link: "/panel-pc" },
+    { imgSrc: rel3, title: "Rugged Display Solutions", link: "/rug-display-solutions" },
   ];
 
   return (
@@ -42,7 +53,7 @@ const PcbAssembly = () => {
           of safety and performance in every assembly.
         </p>
 
-        {/* Row of 3 images */}
+        {/* Row of 3 images */} 
         <Row className="mb-4">
           {pcbData.map((pcb, index) => (
             <Col md={4} key={index} className="text-center">
@@ -51,32 +62,39 @@ const PcbAssembly = () => {
                 alt={pcb.title}
                 className="img-fluid pcb-image mb-2"
               />
-              {/* <h5>{pcb.title}</h5> */}
             </Col>
           ))}
         </Row>
 
-        {/* Line and Button */}
+        {/* Single Line and Button after all sections */}
         <div className="lineBtn my-5 text-center">
           <div className="border-line"></div>
-          <Button onClick={handleButtonClick}>
-            {isExpanded ? "Read Less" : "Read More"}
+          <Button onClick={() => setShowRelatedProducts(!showRelatedProducts)}>
+            {showRelatedProducts ? "Read Less" : "Read More"}
           </Button>
         </div>
 
         {/* Display Related Products when "Read More" is clicked */}
-        {isExpanded && (
+        {showRelatedProducts && (
           <div className="my-4">
             <h4>Related Products</h4>
             <Row>
-              {pcbData.map((product, idx) => (
-                <Col md={4} key={idx} className="text-center my-3">
-                  <img
-                    src={product.imgSrc}
-                    alt={product.title}
-                    className="img-fluid mb-2 pcb-image"
-                  />
-                  <h5>{product.title}</h5>
+              {relatedProductsData.map((product, idx) => (
+                <Col
+                  md={4}
+                  key={idx}
+                  className="text-center my-3"
+                  onClick={() => handleProductClick(product.link)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="product-container">
+                    <img
+                      src={product.imgSrc}
+                      alt={product.title}
+                      className="img-fluid product-image"
+                    />
+                    <h5>{product.title}</h5>
+                  </div>
                 </Col>
               ))}
             </Row>

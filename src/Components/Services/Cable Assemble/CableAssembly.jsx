@@ -11,14 +11,25 @@ import ser2 from "../../../Assets/images/Img-Mech-dsn/Cable Assemly/d38999 conne
 import ser3 from "../../../Assets/images/Img-Mech-dsn/Cable Assemly/fibre cable.jpg";
 import ser4 from "../../../Assets/images/Img-Mech-dsn/Cable Assemly/custom cable assembly.jpg";
 import ser5 from "../../../Assets/images/Img-Mech-dsn/Cable Assemly/custom cable.jpg";
+import rel1 from "../../../Assets/images/AllproductsImages/ServerWorkstationImg/Sever (3).png";
+import rel2 from "../../../Assets/images/AllproductsImages/ServerWorkstationImg/dual3.jpg";
+import rel3 from "../../../Assets/images/AllproductsImages/RadarComputerImg/RC (3).png";
+import { useNavigate } from "react-router-dom";
 
 const CableAssembly = () => {
-  const [showProducts, setShowProducts] = useState(false);
+  // const [showProducts, setShowProducts] = useState(false);
+  const [showRelatedProducts, setShowRelatedProducts] = useState(false);
   
   useEffect(() => window.scroll(0, 0), []);
 
-  const handleButtonClick = () => {
-    setShowProducts(!showProducts);
+  const navigate = useNavigate(); 
+
+  // const handleButtonClick = () => {
+  //   setShowRelatedProducts(!showProducts);
+  // };
+
+  const handleProductClick = (productLink) => {
+    navigate(productLink); 
   };
 
   const sectionsData = [
@@ -62,9 +73,21 @@ const CableAssembly = () => {
   ];
 
   const relatedProductsData = [
-    { imgSrc: ser1, title: "Product 1" },
-    { imgSrc: ser1, title: "Product 2" },
-    { imgSrc: ser1, title: "Product 3" },
+    {
+      imgSrc: rel1,
+      title: "Rugged Servers",
+      link: "/servers-workstations",
+    },
+    {
+      imgSrc: rel2,
+      title: "Rugged Workstation",
+      link: "/work-station",
+    },
+    {
+      imgSrc: rel3,
+      title: "Radar Computer",
+      link: "/radar-computer",
+    },
   ];
 
   return (
@@ -150,24 +173,32 @@ const CableAssembly = () => {
         {/* Line and Button */}
         <div className="lineBtn my-5">
           <div className="border-line"></div>
-          <Button onClick={handleButtonClick}>
-            {showProducts ? "Read Less" : "Read More"}
+          <Button onClick={() => setShowRelatedProducts(!showRelatedProducts)}>
+            {showRelatedProducts ? "Read Less" : "Read More"}
           </Button>
         </div>
 
         {/* Display Related Products when "Read More" is clicked */}
-        {showProducts && (
+        {showRelatedProducts && (
           <div className="my-4">
             <h4>Related Products</h4>
             <Row>
               {relatedProductsData.map((product, idx) => (
-                <Col md={4} key={idx} className="text-center my-3">
-                  <img
-                    src={product.imgSrc}
-                    alt={product.title}
-                    className="img-fluid mb-2 single-image-size"
-                  />
-                  <p>{product.title}</p>
+                <Col
+                  md={4}
+                  key={idx}
+                  className="text-center my-3"
+                  onClick={() => handleProductClick(product.link)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="product-container">
+                    <img
+                      src={product.imgSrc}
+                      alt={product.title}
+                      className="img-fluid product-image"
+                    />
+                    <h5>{product.title}</h5>
+                  </div>
                 </Col>
               ))}
             </Row>

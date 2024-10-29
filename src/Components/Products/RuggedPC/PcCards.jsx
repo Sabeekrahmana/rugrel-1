@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Card, Container } from 'react-bootstrap';
 import './Size.css'
 
 const PcCards = ({ sizeTitle, size1, size12, size3, size4, size5 }) => {
+  useEffect(() => window.scroll(0, 0), []);
+
   return (
     <div>
       <Container>
